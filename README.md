@@ -4,7 +4,7 @@
 
 ## Task 0.1: Check readiness in cloud shell
 
-- (Optional) Clone this repo in your cloud shell.
+- (Optional) Clone this repo in your cloud shell using `git clone` and the string from the **Code** dropdown.
 
 ## Task 0.2: Test basic Linux commands
 
