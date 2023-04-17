@@ -6,7 +6,9 @@
 
 - Create an empty file with `touch main.bicep`.
 - Open the file with `nano main.bicep`, enter some text, save with Ctrl+O, and exit with Ctrl+X.
+- View file contents with `cat main.bicep`.
 - Open the file with `code main.bicep`, enter some text
+- View file contents with `cat main.bicep`.
 
 ## Task 0.2: Create resource group
 
