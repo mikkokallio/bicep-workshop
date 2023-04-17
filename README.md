@@ -19,7 +19,7 @@
 
 ## Task 0.3: Create resource group
 
-If working in a shared subscription, it's important that each participant has a resource group with a unique name. Replace the example with e.g. `rg-workshop-mkallio`.
+If working in a shared subscription, it's important that each participant has a resource group with a unique name. Replace the example with something based on your name, e.g. `rg-workshop-mkallio`.
 
 `az group create --location westeurope --name rg-workshop-alastname`
 
@@ -31,11 +31,16 @@ Note: Normally, it's a good practice to group together resources in resource gro
 
 - Go to https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/scenarios-virtual-networks.
 - Read about why it's better to create subnets within the vnet definition and not as child resources.
-- 
-- Copy-paste the first template example on the page into 
+- Copy-paste the first template example on the page into `main.bicep`.
+- Run `bicep build main.bicep` to view how the code is transpiled into JSON.
+- Deploy the resource with `az deployment group create --template-file main.bicep --resource-group rg-workshop-alastname`.
 
 ## Task 1.2: Modify
 
 ## Task 1.3: Delete 
 
 ## Task 1.4: Work with existing resources
+
+
+
+https://learn.microsoft.com/en-us/azure/templates/
