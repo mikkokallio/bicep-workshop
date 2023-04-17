@@ -17,11 +17,13 @@
 - Open the file with `code main.bicep`, enter some text
 - View file contents with `cat main.bicep`.
 
-## Task 0.2: Create resource group
+## Task 0.3: Create resource group
 
-If working in a shared subscription, it's important that each participant has a resource group with a unique name.
+If working in a shared subscription, it's important that each participant has a resource group with a unique name. Replace the example with e.g. `rg-workshop-mkallio`.
 
-Note: Normally, it's a good practice to group together resources in resource groups according to their lifecycles: "Resources that live together and die together." However, to keep things simple, we're using a single resource group for all resources. ()
+`az group create --location westeurope --name rg-workshop-alastname`
+
+Note: Normally, it's a good practice to group together resources in resource groups according to their lifecycles: "Resources that live together and die together." However, to keep things simple, we're using a single resource group for all resources. (Later workshops may include using a larger scope.)
 
 # Unit 1: Create, modify, and destroy resources
 
