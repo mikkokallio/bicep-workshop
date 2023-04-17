@@ -14,7 +14,7 @@
 - List folder contents with `ls`.
 - Open the file with `nano main.bicep`, enter some text, save with Ctrl+O, and exit with Ctrl+X.
 - View file contents with `cat main.bicep`.
-- Open the file with `code main.bicep`, enter some text
+- Open the file with `code main.bicep`, enter some text, save with Ctrl+S, and exit with Ctrl+Q.
 - View file contents with `cat main.bicep`.
 
 ## Task 0.3: Create resource group
