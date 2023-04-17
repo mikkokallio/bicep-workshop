@@ -41,6 +41,9 @@ Note: Normally, it's a good practice to group together resources in resource gro
 
 ## Task 1.2: Modify
 
+- First, try deploying the same template again without any changes. What happens?
+- Add a third subnet to `main.bicep`. Watch out for overlapping address spaces!
+
 ## Task 1.3: Delete 
 
 ## Task 1.4: Work with existing resources
@@ -50,3 +53,7 @@ Note: Normally, it's a good practice to group together resources in resource gro
 https://learn.microsoft.com/en-us/azure/templates/
 
 What's this: The configuration value of bicep.use_binary_from_path has been set to 'false'.
+
+- Symbolic names vs Azure names
+
+- dependencies: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/3-define-resources
