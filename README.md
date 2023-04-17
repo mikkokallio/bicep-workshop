@@ -32,7 +32,10 @@ Note: Normally, it's a good practice to group together resources in resource gro
 - Go to https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/scenarios-virtual-networks.
 - Read about why it's better to create subnets within the vnet definition and not as child resources.
 - Copy-paste the first template example on the page into `main.bicep`.
-- Run `bicep build main.bicep` to view how the code is transpiled into JSON.
+- Transpile the bicep into ARM using `bicep build main.bicep`.
+- Note: You can ignore the warning. We'll learn how to use variables later!
+- Note: Transpiling the file manually is not required when deploying Bicep. We do it here just to show what happens under the hood every time you deploy.
+- View the new file with `cat main.json`.
 - Deploy the resource with `az deployment group create --template-file main.bicep --resource-group rg-workshop-alastname`.
 
 ## Task 1.2: Modify
