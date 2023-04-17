@@ -4,6 +4,10 @@
 
 ## Task 0.1: Check readiness in Cloud Shell
 
+- Create an empty file with `touch main.bicep`.
+- Open the file with `nano main.bicep`, enter some text, save with Ctrl+O, and exit with Ctrl+X.
+- Open the file with `code main.bicep`, enter some text
+
 ## Task 0.2: Create resource group
 
 If working in a shared subscription, it's important that each participant has a resource group with a unique name.
@@ -16,6 +20,8 @@ Note: Normally, it's a good practice to group together resources in resource gro
 
 - Go to https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/scenarios-virtual-networks.
 - Read about why it's better to create subnets within the vnet definition and not as child resources.
+- 
+- Copy-paste the first template example on the page into 
 
 ## Task 1.2: Modify
 
