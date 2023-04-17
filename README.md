@@ -37,6 +37,7 @@ Note: Normally, it's a good practice to group together resources in resource gro
 - Note: Transpiling the file manually is not required when deploying Bicep. We do it here just to show what happens under the hood every time you deploy.
 - View the new file with `cat main.json`.
 - Deploy the resource with `az deployment group create --template-file main.bicep --resource-group rg-workshop-alastname`.
+- Check the deployment in portal, with `az network vnet list` or otherwise.
 
 ## Task 1.2: Modify
 
@@ -47,3 +48,5 @@ Note: Normally, it's a good practice to group together resources in resource gro
 
 
 https://learn.microsoft.com/en-us/azure/templates/
+
+What's this: The configuration value of bicep.use_binary_from_path has been set to 'false'.
