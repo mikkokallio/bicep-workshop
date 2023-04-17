@@ -43,7 +43,7 @@ Optional: Set the rg as default. `az config set defaults.group=rg-workshop-alast
 - Check the deployed resources in portal, with `az network vnet list` or otherwise.
 - To view the deployment `az deployment group list --output table`.
 
-## Task 1.2: Modify
+## Task 1.2: Modify the resource
 
 - First, try deploying the same template again without any changes. What happens?
 - Add a third subnet to `main.bicep`. Watch out for overlapping address spaces!
@@ -51,12 +51,23 @@ Optional: Set the rg as default. `az config set defaults.group=rg-workshop-alast
 - If the changes look ok, run the deployment.
 - Change the names of all the subnets in some consistent way and re-deploy.
 
-## Task 1.3: Delete 
+## Task 1.3: Add a VM to the vnet
+
+This task involves creating a resource that is dependent on another.
 
 ## Task 1.4: Work with existing resources
 
 az deployment group list --output table
 
+## Task x.x: Parametrize location
+
+- Familiarize yourself with how variables and parameters work in Bicep: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/5-add-flexibility-parameters-variables
+- Create a string parameter location with the value `westeurope`.
+- Everywhere in the code, replace the string "westeurope" with the parameter name.
+- param location string = resourceGroup().location
+
+
+- Define the parameter as 
 https://learn.microsoft.com/en-us/azure/templates/
 az configure --defaults group=[sandbox resource group name]
 What's this: The configuration value of bicep.use_binary_from_path has been set to 'false'.
@@ -64,3 +75,4 @@ What's this: The configuration value of bicep.use_binary_from_path has been set 
 - Symbolic names vs Azure names
 
 - dependencies: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/3-define-resources
+- some slide should go over all the concepts like symbolic names.
