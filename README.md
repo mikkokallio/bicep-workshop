@@ -2,9 +2,16 @@
 
 # Preparations
 
-## Task 0.1: Check readiness in Cloud Shell
+## Task 0.1: Check readiness in cloud shell
 
+- (Optional) Clone this repo in your cloud shell.
+
+## Task 0.2: Test basic Linux commands
+
+- Create a new folder `mkdir bicep-workshop`.
+- Go to the folder `cd bicep-workshop`. (Note: You can use tab for completion.)
 - Create an empty file with `touch main.bicep`.
+- List folder contents with `ls`.
 - Open the file with `nano main.bicep`, enter some text, save with Ctrl+O, and exit with Ctrl+X.
 - View file contents with `cat main.bicep`.
 - Open the file with `code main.bicep`, enter some text
