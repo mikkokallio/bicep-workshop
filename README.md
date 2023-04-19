@@ -27,7 +27,7 @@ Note: Normally, it's a good practice to group together resources in resource gro
 
 Optional: Set the rg as default. `az config set defaults.group=rg-workshop-alastname`.
 
-# Unit 1: Create, modify, and destroy resources
+# Unit 1: Basic operations: Create, modify, and destroy resources
 
 ## Task 1.1: Create network
 
@@ -56,7 +56,11 @@ Optional: Set the rg as default. `az config set defaults.group=rg-workshop-alast
 
 - Apply comments to a resource. You can use // for one line at a time or comment out a whole block with /* */
 - Note: If you're familiar with Java, C#, it's easy to remember the comments work the same way.
-- 
+- Deploy again. What happens?
+- Read this article. What is needed to actually delete a resource?
+- After figuring out how to delete the resources, remove the comments and re-deploy the resource.
+- Change the location into something else than westeurope and re-reploy using the same mode as above.
+
 ## Task 1.3: Add a VM to the vnet
 
 This task involves creating a resource that is dependent on another.
@@ -65,6 +69,7 @@ This task involves creating a resource that is dependent on another.
 
 az deployment group list --output table
 
+# Unit 2: Refactor code to improve maintainbility
 ## Task x.x: Parametrize location
 
 - Familiarize yourself with how variables and parameters work in Bicep: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/5-add-flexibility-parameters-variables
