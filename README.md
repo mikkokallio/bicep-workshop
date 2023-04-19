@@ -83,6 +83,11 @@ var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Stan
 
 var appServicePlanSkuName = (environmentType == 'prod') ? 'P2V3' : 'F1'
 
+
+## Rollback
+
+https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/rollback-on-error
+
 ## 
 - Define the parameter as 
 https://learn.microsoft.com/en-us/azure/templates/
