@@ -66,7 +66,23 @@ az deployment group list --output table
 - Everywhere in the code, replace the string "westeurope" with the parameter name.
 - param location string = resourceGroup().location
 
+## Task x.x: Unique and combined string
+- param storageAccountName string = uniqueString(resourceGroup().id)
+- param storageAccountName string = 'toylaunch${uniqueString(resourceGroup().id)}'
 
+## Allowed param
+@allowed([
+  'nonprod'
+  'prod'
+])
+param environmentType string
+
+## Conditional statement (ternary operator)
+
+var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'
+var appServicePlanSkuName = (environmentType == 'prod') ? 'P2V3' : 'F1'
+
+## 
 - Define the parameter as 
 https://learn.microsoft.com/en-us/azure/templates/
 az configure --defaults group=[sandbox resource group name]
