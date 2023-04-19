@@ -32,6 +32,7 @@ Optional: Set the rg as default. `az config set defaults.group=rg-workshop-alast
 ## Task 1.1: Create network
 
 - Go to https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/scenarios-virtual-networks.
+- Check out also https://learn.microsoft.com/en-us/azure/templates/microsoft.network/virtualnetworks?pivots=deployment-language-bicep
 - Read about why it's better to create subnets within the vnet definition and not as child resources.
 - Copy-paste the first template example on the page into `main.bicep`.
 - Transpile the bicep into ARM using `bicep build main.bicep`.
@@ -51,6 +52,11 @@ Optional: Set the rg as default. `az config set defaults.group=rg-workshop-alast
 - If the changes look ok, run the deployment.
 - Change the names of all the subnets in some consistent way and re-deploy.
 
+## Task 1.3: Delete a resource
+
+- Apply comments to a resource. You can use // for one line at a time or comment out a whole block with /* */
+- Note: If you're familiar with Java, C#, it's easy to remember the comments work the same way.
+- 
 ## Task 1.3: Add a VM to the vnet
 
 This task involves creating a resource that is dependent on another.
@@ -64,6 +70,7 @@ az deployment group list --output table
 - Familiarize yourself with how variables and parameters work in Bicep: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/5-add-flexibility-parameters-variables
 - Create a string parameter location with the value `westeurope`.
 - Everywhere in the code, replace the string "westeurope" with the parameter name.
+- Try changing to param location string = 'westus3' and deploy. Use what if. What happens?
 - param location string = resourceGroup().location
 
 ## Task x.x: Unique and combined string
