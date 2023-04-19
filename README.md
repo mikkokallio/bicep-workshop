@@ -80,6 +80,7 @@ param environmentType string
 ## Conditional statement (ternary operator)
 
 var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'
+
 var appServicePlanSkuName = (environmentType == 'prod') ? 'P2V3' : 'F1'
 
 ## 
