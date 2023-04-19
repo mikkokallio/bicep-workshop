@@ -83,6 +83,8 @@ az deployment group list --output table
 - Add to `main.bicep` a storage account. You can use the template e.g. in this article: https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file#resources
 - param storageAccountName string = uniqueString(resourceGroup().id)
 - param storageAccountName string = 'toylaunch${uniqueString(resourceGroup().id)}'
+- Make sure your storage account's name uses a unique string. After deployment, check out the resulting resource.
+- If you didn't deploy a file share already as a sub-resource, do that now.
 
 ## Allowed param
 @allowed([
