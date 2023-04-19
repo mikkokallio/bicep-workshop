@@ -59,7 +59,8 @@ Optional: Set the rg as default. `az config set defaults.group=rg-workshop-alast
 - Deploy again. What happens?
 - Read this article. What is needed to actually delete a resource?
 - After figuring out how to delete the resources, remove the comments and re-deploy the resource.
-- Change the location into something else than westeurope and re-reploy using the same mode as above.
+- Change the location into something else than westeurope and re-reploy using the same mode as above. Does it work?
+- Change location back to westeurope.
 
 ## Task 1.3: Add a VM to the vnet
 
@@ -70,7 +71,7 @@ This task involves creating a resource that is dependent on another.
 az deployment group list --output table
 
 # Unit 2: Refactor code to improve maintainbility
-## Task x.x: Parametrize location
+## Task 2.1: Parametrize location
 
 - Familiarize yourself with how variables and parameters work in Bicep: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/5-add-flexibility-parameters-variables
 - Create a string parameter location with the value `westeurope`.
@@ -78,7 +79,8 @@ az deployment group list --output table
 - Try changing to param location string = 'westus3' and deploy. Use what if. What happens?
 - param location string = resourceGroup().location
 
-## Task x.x: Unique and combined string
+## Task 2.2: Add storage using unique and combined string
+- Add to `main.bicep` a storage account. You can use the template e.g. in this article: https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file#resources
 - param storageAccountName string = uniqueString(resourceGroup().id)
 - param storageAccountName string = 'toylaunch${uniqueString(resourceGroup().id)}'
 
