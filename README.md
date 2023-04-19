@@ -79,7 +79,11 @@ az deployment group list --output table
 - Try changing to param location string = 'westus3' and deploy. Use what if. What happens?
 - param location string = resourceGroup().location
 
-## Task 2.2: Add storage using unique and combined string
+## Task 2.2: Add resource name prefix to all names
+- Add another string param prefix and give it a value, such as "workshop".
+- Use the combined string syntax ${} to automatically insert that value into resource names. For example, a VM's name should after this change be `vm-workshop-01`.
+
+## Task 2.2: Add storage with a unique string in its name
 - Add to `main.bicep` a storage account. You can use the template e.g. in this article: https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file#resources
 - param storageAccountName string = uniqueString(resourceGroup().id)
 - param storageAccountName string = 'toylaunch${uniqueString(resourceGroup().id)}'
