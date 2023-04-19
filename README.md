@@ -62,6 +62,10 @@ Optional: Set the rg as default. `az config set defaults.group=rg-workshop-alast
 - Change the location into something else than westeurope and re-reploy using the same mode as above. Does it work?
 - Change location back to westeurope.
 
+## Task 1.4: Rollback a deployment
+
+https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/rollback-on-error
+
 ## Task 1.3: Add a VM to the vnet
 
 This task involves creating a resource that is dependent on another.
@@ -90,6 +94,9 @@ az deployment group list --output table
 - Make sure your storage account's name uses a unique string. After deployment, check out the resulting resource.
 - If you didn't deploy a file share already as a sub-resource, do that now.
 
+# Unit 3: Modularizing
+
+# Unit 4: Using modules from a private registry
 ## Allowed param
 @allowed([
   'nonprod'
@@ -104,9 +111,6 @@ var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Stan
 var appServicePlanSkuName = (environmentType == 'prod') ? 'P2V3' : 'F1'
 
 
-## Rollback
-
-https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/rollback-on-error
 
 ## 
 - Define the parameter as 
