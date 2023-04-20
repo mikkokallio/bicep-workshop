@@ -75,6 +75,17 @@ This task involves creating a resource that is dependent on another.
 az deployment group list --output table
 
 # Unit 2: Refactor code to improve maintainbility
+/table
+
+```
+@allowed([
+  'nonprod'
+  'prod'
+])
+param environmentType string
+```
+
+
 ## Task 2.1: Parametrize location
 
 - Familiarize yourself with how variables and parameters work in Bicep: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/5-add-flexibility-parameters-variables
@@ -94,15 +105,17 @@ az deployment group list --output table
 - Make sure your storage account's name uses a unique string. After deployment, check out the resulting resource.
 - If you didn't deploy a file share already as a sub-resource, do that now.
 
+## Task 2.3: Add prod/nonprod parameter with @allowed decorator
+
+- Add a parameter for environment type after the previous parameters. Use the @allowed decorator as shown in the table.
+- Add a variable ^var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'^
+- Now add a second variable (e.g. one that changes VM name?) using the ternary operator and embedding that with the combined string syntax.
+- Deploy the template as usual.
+- Deploy again adding `--parameters environmentType=nonprod` to the command.
+
 # Unit 3: Modularizing
 
 # Unit 4: Using modules from a private registry
-## Allowed param
-@allowed([
-  'nonprod'
-  'prod'
-])
-param environmentType string
 
 ## Conditional statement (ternary operator)
 
