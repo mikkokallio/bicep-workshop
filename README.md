@@ -133,6 +133,11 @@ az deployment group list --output table
 
 output childAddressPrefix string = VNet1::VNet1_Subnet1.properties.addressPrefix
 
+## Task 3.2: Modularize more resources
+- Make a module from the vnet. Remember to output the vnet or its subnet so you can reference them in the VM!
+- Make a module from the VM. Include the NIC in the same module because it's essentially part of the same thing.
+- Create a new module for private link/endpoint?
+
 # Unit 4: Using modules from a private registry
 
 ## Conditional statement (ternary operator)
