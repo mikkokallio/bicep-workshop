@@ -1,6 +1,6 @@
 # bicep-workshop
 
-# Preparations
+# Unit 0: Preparations
 
 ## Task 0.1: Check readiness in cloud shell
 
