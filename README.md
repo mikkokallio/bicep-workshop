@@ -111,13 +111,27 @@ az deployment group list --output table
 - Deploy the template as usual.
 - Deploy again adding `--parameters environmentType=nonprod` to the command.
 
-# Unit 3: Modularizing
+# Unit 3: Modular re-use
 |Feature|Syntax|Notes|
 |---|---|---|
 |Module outputs|`output appServiceAppName string = appServiceAppName`|Put this at the end of a module.|
-|   |   |   |
-|   |   |   |
+|Module references|   |   |
+|Child resources|resource::subresource|   |
 
+- Read: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/7-group-related-resources-modules
+- https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/outputs?tabs=azure-powershell
+- https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/child-resource-name-type
+- 
+## Task 3.1: Create a module for the storage account
+- Create sub-folder `modules` under the folder where you have `main.bicep`.
+- In the new folder, create a new file `storage.bicep`.
+- Move the storage resource from `main.bicep` to the new file.
+- Add parameters for any values that are not defined locally. (Hint: You'll probably need two params.)
+- Go back to `main.bicep` and add a reference to that module. Remember to supply values for any parameters the module uses!
+- Run what-if to see what gets changed, then deploy.
+- Add an output for share's id.
+
+output childAddressPrefix string = VNet1::VNet1_Subnet1.properties.addressPrefix
 
 # Unit 4: Using modules from a private registry
 
