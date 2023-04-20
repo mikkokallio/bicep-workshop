@@ -112,6 +112,11 @@ var appServicePlanSkuName = (environmentType == 'prod') ? 'P2V3' : 'F1'
 
 
 
+## Convert an arm template to Bicep
+- Create e.g. a vnet in Azure
+- View the ARM template
+- Use command to convert
+
 ## 
 - Define the parameter as 
 https://learn.microsoft.com/en-us/azure/templates/
