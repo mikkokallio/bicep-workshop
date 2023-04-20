@@ -80,7 +80,7 @@ az deployment group list --output table
 |Variables|``||
 |Parameters|   |   |
 |Combined strings| |
-|Descriptions|`@description('The name of the storage account to deploy.')`<br>joo
+|Descriptions|`@description('The name of the storage account to deploy.')`<br>`param storageAccountName string`
 |Decorators|```@allowed([</br>'nonprod'</br>'prod'<br/>])<br>param environmentType string```|   |
 
 
