@@ -75,15 +75,22 @@ This task involves creating a resource that is dependent on another.
 az deployment group list --output table
 
 # Unit 2: Refactor code to improve maintainbility
-/table
-
-```
+|Feature|Syntax|Notes|
+|---|---|---|
+|Variables|``||
+|Parameters|   |   |
+|Combined strings| |
+|Decorators|```
 @allowed([
   'nonprod'
   'prod'
 ])
 param environmentType string
-```
+```|   |
+
+/table
+
+
 
 
 ## Task 2.1: Parametrize location
@@ -114,6 +121,12 @@ param environmentType string
 - Deploy again adding `--parameters environmentType=nonprod` to the command.
 
 # Unit 3: Modularizing
+|Feature|Syntax|Notes|
+|---|---|---|
+|Module outputs|`output appServiceAppName string = appServiceAppName`|Put this at the end of a module.|
+|   |   |   |
+|   |   |   |
+
 
 # Unit 4: Using modules from a private registry
 
