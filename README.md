@@ -134,7 +134,8 @@ az deployment group list --output table
 output childAddressPrefix string = VNet1::VNet1_Subnet1.properties.addressPrefix
 
 ## Task 3.2: Modularize the vnet
-- Make a module from the vnet. Remember to output the vnet or its subnet so you can reference them in the VM!
+- Make a module from the vnet. Remember to output the vnet, its subnets, or just one subnet so you can reference them in the VM!
+- If you output all subnets, note that the type is `array`, not `[]` or `string[]`.
 - Consider how the reference to subnet(s) and the id must change in the VM definition.
 - Deploy to test the changes.
 
