@@ -80,6 +80,7 @@ az deployment group list --output table
 |Variables|``||
 |Parameters|   |   |
 |Combined strings| |
+|Descriptions|`@description('The name of the storage account to deploy.')`<br>joo
 |Decorators|```@allowed([</br>'nonprod'</br>'prod'<br/>])<br>param environmentType string```|   |
 
 
@@ -92,18 +93,21 @@ az deployment group list --output table
 - Try changing to param location string = 'westus3' and deploy. Use what if. What happens?
 - param location string = resourceGroup().location
 
-## Task 2.2: Add resource name prefix to all names
+## Task 2.2: Add descriptions to make the code easier to read
+- Add descriptions to your params using the 
+
+## Task 2.3: Add resource name prefix to all names
 - Add another string param prefix and give it a value, such as "workshop".
 - Use the combined string syntax ${} to automatically insert that value into resource names. For example, a VM's name should after this change be `vm-workshop-01`.
 
-## Task 2.2: Add storage with a unique string in its name
+## Task 2.4: Add storage with a unique string in its name
 - Add to `main.bicep` a storage account. You can use the template e.g. in this article: https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file#resources
 - param storageAccountName string = uniqueString(resourceGroup().id)
 - param storageAccountName string = 'toylaunch${uniqueString(resourceGroup().id)}'
 - Make sure your storage account's name uses a unique string. After deployment, check out the resulting resource.
 - If you didn't deploy a file share already as a sub-resource, do that now.
 
-## Task 2.3: Add prod/nonprod parameter with @allowed decorator
+## Task 2.5: Add prod/nonprod parameter with @allowed decorator
 
 - Add a parameter for environment type after the previous parameters. Use the @allowed decorator as shown in the table.
 - Add a variable ^var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'^
@@ -121,6 +125,7 @@ az deployment group list --output table
 - Read: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/7-group-related-resources-modules
 - https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/outputs?tabs=azure-powershell
 - https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/child-resource-name-type
+- https://learn.microsoft.com/en-us/training/modules/create-composable-bicep-files-using-modules/2-create-use-bicep-modules?tabs=visualizer
 - 
 ## Task 3.1: Create a module for the storage account
 - Create sub-folder `modules` under the folder where you have `main.bicep`.
