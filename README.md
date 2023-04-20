@@ -80,16 +80,7 @@ az deployment group list --output table
 |Variables|``||
 |Parameters|   |   |
 |Combined strings| |
-|Decorators|```
-@allowed([
-  'nonprod'
-  'prod'
-])
-param environmentType string
-```|   |
-
-/table
-
+|Decorators|```@allowed([<br>'nonprod'<br>'prod'<br>])<br>param environmentType string```|   |
 
 
 
