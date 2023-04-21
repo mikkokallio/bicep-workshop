@@ -154,26 +154,28 @@ output childAddressPrefix string = VNet1::VNet1_Subnet1.properties.addressPrefix
 
 # Unit 4: Using modules from a private registry
 
-## Conditional statement (ternary operator)
-
-var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'
-
-var appServicePlanSkuName = (environmentType == 'prod') ? 'P2V3' : 'F1'
+Replace custom modules
 
 
 
-## Convert an arm template to Bicep
+# To be added
+
+## Task x.x.: Conditional statement (ternary operator)
+`var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'`
+`var appServicePlanSkuName = (environmentType == 'prod') ? 'P2V3' : 'F1'`
+
+## Task x.x: Conditions (boolean & expression)
+- TBA
+
+## Task x.x: Loops, i and [item, item2, item3]
+- TBA
+
+## Task x.x.: Convert an arm template to Bicep
 - Create e.g. a vnet in Azure
 - View the ARM template
 - Use command to convert
 
-## 
-- Define the parameter as 
-https://learn.microsoft.com/en-us/azure/templates/
-az configure --defaults group=[sandbox resource group name]
-What's this: The configuration value of bicep.use_binary_from_path has been set to 'false'.
-
-- Symbolic names vs Azure names
-
+# To be checked
+- What's this: The configuration value of bicep.use_binary_from_path has been set to 'false'.
+- Anatomy of template/module, slide vs article. Symbolic names vs Azure names, etc.
 - dependencies: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/3-define-resources
-- some slide should go over all the concepts like symbolic names.
