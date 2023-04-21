@@ -66,11 +66,7 @@ Optional: Set the rg as default. `az config set defaults.group=rg-workshop-alast
 
 https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/rollback-on-error
 
-## Task 1.3: Add a VM to the vnet
-
-This task involves creating a resource that is dependent on another.
-
-## Task 1.4: Work with existing resources
+## Task 1.5: Work with existing resources
 
 az deployment group list --output table
 
@@ -99,6 +95,14 @@ az deployment group list --output table
 - Make code more readable but also provide guidance during deployment.
 - Test deployment to see this.
 - Command to view these from CLI?
+
+## Task 2.3: Dependent resources -- add a VM to the vnet
+
+This task involves creating a resource that is dependent on another.
+- Create a VM using this template (add link)
+- Check that parameters are in place.
+- Deploy to check the VM is created in the right subnet.
+- Add descriptions where applicable. (From here on, do this every time you add new params, resources, etc.)
 
 ## Task 2.3: Add resource name prefix to all names
 - Add another string param prefix and give it a value, such as "workshop".
