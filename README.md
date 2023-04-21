@@ -75,6 +75,9 @@ This task involves creating a resource that is dependent on another.
 az deployment group list --output table
 
 # Unit 2: Refactor code to improve maintainbility
+
+- Model solution for Unit 1: ADD LINK
+
 |Feature|Syntax|Notes|
 |---|---|---|
 |Variables|``||
@@ -82,8 +85,6 @@ az deployment group list --output table
 |Combined strings| |
 |Descriptions|`@description('The name of the storage account to deploy.')`<br>`param storageAccountName string`
 |Decorators|```@allowed([</br>'nonprod'</br>'prod'<br/>])<br>param environmentType string```|   |
-
-
 
 ## Task 2.1: Parametrize location
 
@@ -94,7 +95,10 @@ az deployment group list --output table
 - param location string = resourceGroup().location
 
 ## Task 2.2: Add descriptions to make the code easier to read
-- Add descriptions to your params using the 
+- Add descriptions to your params using the `@description` decorator.
+- Make code more readable but also provide guidance during deployment.
+- Test deployment to see this.
+- Command to view these from CLI?
 
 ## Task 2.3: Add resource name prefix to all names
 - Add another string param prefix and give it a value, such as "workshop".
@@ -116,6 +120,9 @@ az deployment group list --output table
 - Deploy again adding `--parameters environmentType=nonprod` to the command.
 
 # Unit 3: Modular re-use
+
+- Model solution for Unit 2: ADD LINK
+
 |Feature|Syntax|Notes|
 |---|---|---|
 |Module outputs|`output appServiceAppName string = appServiceAppName`|Put this at the end of a module.|
@@ -154,9 +161,13 @@ output childAddressPrefix string = VNet1::VNet1_Subnet1.properties.addressPrefix
 
 # Unit 4: Using modules from a private registry
 
-Replace custom modules
+- Model solution for Unit 3: ADD LINK
 
+Replace custom modules with ones from the global template library.
 
+# Unit 5: Tips and some advanced ways to optimize templates
+
+- TBA
 
 # To be added
 
