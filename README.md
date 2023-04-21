@@ -171,6 +171,11 @@ Replace custom modules with ones from the global template library.
 
 # Unit 5: Tips and some advanced ways to optimize templates
 
+## Task x.x.: Convert an arm template to Bicep
+- Create e.g. a vnet in Azure
+- View the ARM template
+- Use command to convert
+
 - TBA
 
 # To be added
@@ -185,10 +190,6 @@ Replace custom modules with ones from the global template library.
 ## Task x.x: Loops, i and [item, item2, item3]
 - TBA
 
-## Task x.x.: Convert an arm template to Bicep
-- Create e.g. a vnet in Azure
-- View the ARM template
-- Use command to convert
 
 # To be checked
 - What's this: The configuration value of bicep.use_binary_from_path has been set to 'false'.
