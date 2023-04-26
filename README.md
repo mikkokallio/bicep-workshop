@@ -8,10 +8,13 @@ ADD PICTURE HERE
 
 ## Task 0.1: Check readiness in cloud shell
 
-- In Azure portal (portal.azure.com), open the cloud shell by clicking the `>_` button.
+- In Azure portal (portal.azure.com), type `subscriptions` in the search box and open the Subscriptions view.
+- Check that you can see `sub-bicep-training-sandbox`.
+- Open the cloud shell by clicking the `>_` button.
 - If running the cloud shell for the first time in that environment, a storage account is created to store your files.
-- Run `az account show`.
-- In the output, check that the subscription, user, and other details are correct. Before deploying anything it's good to make sure you are using the right environment!
+- Run `az account show --output table`.
+- In the output, check which subscription has the `IsDefault` value set as `true`. Before deploying anything it's good to make sure you are using the right environment!
+- Change the sandbox to your default with `az account set --subscription "sub-bicep-training-sandbox"`.
 - (Optional) Clone this repo in your cloud shell using `git clone` and the string from the **Code** dropdown.
 
 ## Task 0.2: Test basic Linux commands
