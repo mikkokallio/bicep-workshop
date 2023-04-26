@@ -12,9 +12,6 @@ ADD PICTURE HERE
 - If running the cloud shell for the first time in that environment, a storage account is created to store your files.
 - Run `az account show`.
 - In the output, check that the subscription, user, and other details are correct. Before deploying anything it's good to make sure you are using the right environment!
-
-![image](https://user-images.githubusercontent.com/22912071/234683081-0d5daff1-dd0d-47bb-82fc-0d6a5c2cb8f0.png)
-
 - (Optional) Clone this repo in your cloud shell using `git clone` and the string from the **Code** dropdown.
 
 ## Task 0.2: Test basic Linux commands
