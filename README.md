@@ -1,5 +1,9 @@
 # bicep-workshop
 
+# Target architecture
+
+ADD PICTURE HERE
+
 # Unit 0: Preparations
 
 ## Task 0.1: Check readiness in cloud shell
