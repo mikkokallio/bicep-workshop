@@ -38,6 +38,10 @@ Note: Normally, it's a good practice to group together resources in resource gro
 
 Optional: Set the rg as default. `az config set defaults.group=rg-workshop-alastname`.
 
+## Task 0.4: Check resource providers
+
+- In portal, go to...
+
 # Unit 1: Basic operations: Create, modify, and destroy resources
 
 ## Task 1.1: Create network
