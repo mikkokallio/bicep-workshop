@@ -189,6 +189,11 @@ Replace custom modules with ones from the global template library.
 
 - TBA
 
+# Clean-up
+
+- When you're done, you can delete the resource group that you used for deploying resources. That removes not only the rg but also any resources.
+- Switch subscription back?
+
 # To be added
 
 ## Task x.x.: Conditional statement (ternary operator)
