@@ -8,7 +8,7 @@ ADD PICTURE HERE
 
 ## Task 0.1: Check readiness in cloud shell
 
-- In Azure portal (portal.azure.com), type `subscriptions` in the search box and open the Subscriptions view.
+- In Azure portal ([portal.azure.com](https://portal.azure.com/)), type `subscriptions` in the search box and open the Subscriptions view.
 - Check that you can see `sub-bicep-training-sandbox`.
 - Open the cloud shell by clicking the `>_` button.
 - If running the cloud shell for the first time in that environment, a storage account is created to store your files.
