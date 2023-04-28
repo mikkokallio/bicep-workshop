@@ -40,7 +40,10 @@ Optional: Set the rg as default. `az config set defaults.group=rg-workshop-alast
 
 ## Task 0.4: Check resource providers
 
-- In portal, go to...
+Some resource providers are registered by default. Other resource providers are registered automatically when you take certain actions. When you create a resource through the portal, the resource provider is typically registered for you. When you deploy an Azure Resource Manager template or Bicep file, resource providers defined in the template are registered automatically. However, if a resource in the template creates supporting resources that aren't in the template, such as monitoring or security resources, you need to manually register those resource providers.
+
+- In Azure portal, go to `sub-bicep-training-sandbox`.
+- For more information, see https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types
 
 # Unit 1: Basic operations: Create, modify, and destroy resources
 
