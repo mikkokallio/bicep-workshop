@@ -53,6 +53,7 @@ Some resource providers are registered by default. Other resource providers are 
 |Resources|`resource sa 'Microsoft.Storage/storageAccounts@2022-09-01' = { ... }`||
 |Child resources|   |   |
 |Dependent resources| |
+|Preview with what-if|``| |
 |Comments|``| |
 |Comment blocks||   |
 
