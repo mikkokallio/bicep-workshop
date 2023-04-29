@@ -76,9 +76,9 @@ Some resource providers are registered by default. Other resource providers are 
 
 - Change the symbolic name of the resource `storageAccount` to `sa`. This is a common naming convention for storage accounts.
 - Try deploying the same template again without any other changes. What happens?
-- Add a blob storage under the  subnet to `main.bicep`. Watch out for overlapping address spaces!
+- Change the replication of the storage account from LRS to GRS. (Hint: You need to change a value under `sku`. Use the )
 - Preview deployment with `az deployment group what-if --template-file main.bicep`.
-- If the changes look ok, run the deployment.
+- If the changes look ok, run the deployment, using the same command as in Task 1.1.
 - Change the names of all the subnets in some consistent way and re-deploy.
 
 ## Task 1.3: Delete a resource
@@ -90,6 +90,14 @@ Some resource providers are registered by default. Other resource providers are 
 - After figuring out how to delete the resources, remove the comments and re-deploy the resource.
 - Change the location into something else than westeurope and re-reploy using the same mode as above. Does it work?
 - Change location back to westeurope.
+
+## Task 1.4: Dependent resources -- add a VM to the vnet
+
+This task involves creating a resource that is dependent on another.
+- Create a VM using this template (add link)
+- Check that parameters are in place.
+- Deploy to check the VM is created in the right subnet.
+- Add descriptions where applicable. (From here on, do this every time you add new params, resources, etc.)
 
 ## Task 1.4: Rollback a deployment
 
@@ -124,14 +132,6 @@ az deployment group list --output table
 - Make code more readable but also provide guidance during deployment.
 - Test deployment to see this.
 - Command to view these from CLI?
-
-## Task 2.3: Dependent resources -- add a VM to the vnet
-
-This task involves creating a resource that is dependent on another.
-- Create a VM using this template (add link)
-- Check that parameters are in place.
-- Deploy to check the VM is created in the right subnet.
-- Add descriptions where applicable. (From here on, do this every time you add new params, resources, etc.)
 
 ## Task 2.3: Add resource name prefix to all names
 - Add another string param prefix and give it a value, such as "workshop".
