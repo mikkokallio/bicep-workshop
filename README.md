@@ -27,6 +27,7 @@ ADD PICTURE HERE
 - View file contents with `cat main.bicep`.
 - Open the file with `code main.bicep`, enter some text, save with Ctrl+S, and exit with Ctrl+Q.
 - View file contents with `cat main.bicep`.
+- See https://learn.microsoft.com/en-us/azure/cloud-shell/features#pre-installed-tools for a list of tools that the Cloud Shell has pre-installed.
 
 ## Task 0.3: Create resource group
 
