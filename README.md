@@ -48,25 +48,34 @@ Some resource providers are registered by default. Other resource providers are 
 
 # Unit 1: Basic operations: Create, modify, and destroy resources
 
-## Task 1.1: Create network
+|Feature|Syntax|Notes|
+|---|---|---|
+|Resources|`resource sa 'Microsoft.Storage/storageAccounts@2022-09-01' = { ... }`||
+|Child resources|   |   |
+|Dependent resources| |
+|Comments|``| |
+|Comment blocks||   |
 
-- Go to https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/scenarios-virtual-networks.
-- Check out also https://learn.microsoft.com/en-us/azure/templates/microsoft.network/virtualnetworks?pivots=deployment-language-bicep
-- Read about why it's better to create subnets within the vnet definition and not as child resources.
-- Copy-paste the first template example on the page into `main.bicep`.
+## Task 1.1: Create storage account resource
+
+- Check out [https://learn.microsoft.com/en-us/azure/templates/microsoft.network/virtualnetworks?pivots=deployment-language-bicep](https://learn.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts?pivots=deployment-language-bicep). There exists for each resource type a similar definition.
+- Go to https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/3-define-resources and copy the first resource template you see on the page (a storage account).
+- Go back to the Cloud Shell and paste the template into `main.bicep`.
+- Change the name of the storage account into something unique, for example `workshopstorage[yourname]`, where you replace `[yourname]` with your initials or full name, for example. We'll learn later how to make a resource name unique automatically.
 - Transpile the bicep into ARM using `bicep build main.bicep`.
 - Note: You can ignore the warning. We'll learn how to use variables later!
 - Note: Transpiling the file manually is not required when deploying Bicep. We do it here just to show what happens under the hood every time you deploy.
 - View the new file with `cat main.json`.
 - Deploy the resource with `az deployment group create --template-file main.bicep`.
 - Note: If you didn't set the default rg earlier, you need to include the `--resource-group` switch with the rg name. The same applies to all later deployment commands.
-- Check the deployed resources in portal, with `az network vnet list` or otherwise.
+- Check the deployed resources in portal, with `az storage account list --output table` or otherwise.
 - To view the deployment `az deployment group list --output table`.
 
 ## Task 1.2: Modify the resource
 
-- First, try deploying the same template again without any changes. What happens?
-- Add a third subnet to `main.bicep`. Watch out for overlapping address spaces!
+- Change the symbolic name of the resource `storageAccount` to `sa`. This is a common naming convention for storage accounts.
+- Try deploying the same template again without any other changes. What happens?
+- Add a blob storage under the  subnet to `main.bicep`. Watch out for overlapping address spaces!
 - Preview deployment with `az deployment group what-if --template-file main.bicep`.
 - If the changes look ok, run the deployment.
 - Change the names of all the subnets in some consistent way and re-deploy.
