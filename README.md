@@ -97,8 +97,8 @@ Some resource providers are registered by default. Other resource providers are 
 This task involves creating a resource that is dependent on another.
 - Create an app service plan and app using the templates in https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/3-define-resources.
 - Change the symbolic names of the two new resources to `xxx` and `yyy`, respectively. Deploy or run what-if. What happens? If any errors occur, fix references so that the code works again.
-- Change the names of the resources to `xxx` and `yyy`, respectively, and change the locations of both resources to `westeurope`.
-- Add descriptions where applicable. (From here on, do this every time you add new params, resources, etc.)
+- Change the locations of both resources to `westeurope` and deploy. What happens?
+- Change the names of the resources to `xxx` and `yyy`, respectively, and change the locations of both resources to `westeurope`. After these changes, deploy. What happens?
 
 ## Task 1.4: Rollback a deployment
 
@@ -129,10 +129,11 @@ az deployment group list --output table
 - param location string = resourceGroup().location
 
 ## Task 2.2: Add descriptions to make the code easier to read
-- Add descriptions to your params using the `@description` decorator.
-- Make code more readable but also provide guidance during deployment.
+- Add descriptions to your params using the `@description` decorator. This makes the code more readable but also provides guidance during deployment.
 - Test deployment to see this.
 - Command to view these from CLI?
+- Add descriptions also to resources. See LINK for more information.
+- (From here on, do this every time you add new params, resources, etc.)
 
 ## Task 2.3: Add resource name prefix to all names
 - Add another string param prefix and give it a value, such as "workshop".
