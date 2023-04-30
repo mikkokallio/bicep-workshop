@@ -99,6 +99,7 @@ This task involves creating a resource that is dependent on another.
 - Change the symbolic names of the two new resources to `xxx` and `yyy`, respectively. Deploy or run what-if. What happens? If any errors occur, fix references so that the code works again.
 - Change the locations of both resources to `westeurope` and deploy. What happens?
 - Change the names of the resources to `xxx` and `yyy`, respectively, and change the locations of both resources to `westeurope`. After these changes, deploy. What happens?
+- Add a blob container to the storage account using the same mechanism as the app service plan and app above. See THIS.
 
 ## Task 1.4: Rollback a deployment
 
