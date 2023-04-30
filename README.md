@@ -112,12 +112,13 @@ resource fileShare 'Microsoft.Storage/storageAccounts/fileServices/shares@2021-0
 ## Task 1.5: Use a child resource
 
 - Change the file share from a dependent resource defined outside the storage account to a child resource defined within the parent resource. See https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/child-resource-name-type#within-parent-resource.
+- If you use a different name for the file share when you change it from an externally defined resource to an internal one, the older one is not automatically deleted, so you must use the complete mode or otherwise delete it.
 
-## Task 1.4: Rollback a deployment
+## Task 1.6: Rollback a deployment
 
 https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/rollback-on-error
 
-## Task 1.5: Work with existing resources
+## Task 1.7: Work with existing resources
 
 az deployment group list --output table
 
