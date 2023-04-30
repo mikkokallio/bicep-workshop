@@ -111,7 +111,7 @@ resource fileShare 'Microsoft.Storage/storageAccounts/fileServices/shares@2021-0
 
 ## Task 1.5: Use a child resource
 
-- Convert the blob container from a dependent resource to a child resource. See THIS.
+- Change the file share from a dependent resource defined outside the storage account to a child resource defined within the parent resource. See https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/child-resource-name-type#within-parent-resource.
 
 ## Task 1.4: Rollback a deployment
 
