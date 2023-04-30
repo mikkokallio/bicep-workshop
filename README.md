@@ -76,6 +76,8 @@ Some resource providers are registered by default. Other resource providers are 
 
 - Change the symbolic name of the resource `storageAccount` to `sa`. This is a common naming convention for storage accounts.
 - Try deploying the same template again without any other changes. What happens?
+- On your local machine create a text file `sample.txt` using Notepad or similar editor.
+- In Azure portal, navigate to the storage account and create a blob container, and upload the local file to the container.
 - Change the replication of the storage account from LRS to GRS. Hint: You need to change a value under `sku`. Use the resource definition article linked above to check possible values.
 - Preview deployment with `az deployment group what-if --template-file main.bicep`.
 - If the changes look ok, run the deployment, using the same command as in Task 1.1.
@@ -87,19 +89,23 @@ Some resource providers are registered by default. Other resource providers are 
 - Note: If you're familiar with programming languages like Java or C#, it's easy to remember the comments work the same way.
 - Change the location of the storage account to `westeurope`. Deploy again or run what-if. What happens?
 - Comment out the resource definition. In other words, put `/* */` around the whole code block that defines the storage account.
-- Read this article. What is needed to actually delete a resource?
-- After figuring out how to delete the resources, remove the comments and re-deploy the resource.
+- Read this article https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes. What is needed to actually delete a resource that is not in the template (or is commented out)?
+- After successfully deleting the resources, remove the comments and re-deploy the resource.
 - Change the location into something else than westeurope and re-reploy using the same mode as above. Does it work?
 - Change location back to westeurope.
 
 ## Task 1.4: Dependent resources
 
 This task involves creating a resource that is dependent on another.
-- Create an app service plan and app using the templates in https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/3-define-resources.
-- Change the symbolic names of the two new resources to `xxx` and `yyy`, respectively. Deploy or run what-if. What happens? If any errors occur, fix references so that the code works again.
+- Add to `main.bicep` an app service plan and app using the templates in https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/3-define-resources.
+- Change the `name` of each new resource to `appla-xyz344n` and `app-xyz123213`, respectively.
+- Change the symbolic names of the two new resources to `xxx` and `yyy`, respectively. Deploy or run what-if. What happens? If any errors occur, fix references so that the code works again and you're able to deploy it.
 - Change the locations of both resources to `westeurope` and deploy. What happens?
 - Change the names of the resources to `xxx` and `yyy`, respectively, and change the locations of both resources to `westeurope`. After these changes, deploy. What happens?
-- Add a blob container to the storage account using the same mechanism as the app service plan and app above. See THIS.
+- Add a file share to the storage account using the same mechanism as the app service plan and app above. You can use the following code:
+```resource fileShare 'Microsoft.Storage/storageAccounts/fileServices/shares@2021-04-01' = {
+  name: '${sa.name}/default/fileshare'
+}```
 
 ## Task 1.5: Use a child resource
 
