@@ -54,8 +54,8 @@ Some resource providers are registered by default. Other resource providers are 
 |Child resources|   |   |
 |Dependent resources| |
 |Preview with what-if|``| |
-|Comments|``| |
-|Comment blocks||   |
+|Single line comments|`// This is a comment`| |
+|Multiline comments||   |
 
 ## Task 1.1: Create storage account resource
 
@@ -76,27 +76,28 @@ Some resource providers are registered by default. Other resource providers are 
 
 - Change the symbolic name of the resource `storageAccount` to `sa`. This is a common naming convention for storage accounts.
 - Try deploying the same template again without any other changes. What happens?
-- Change the replication of the storage account from LRS to GRS. (Hint: You need to change a value under `sku`. Use the )
+- Change the replication of the storage account from LRS to GRS. Hint: You need to change a value under `sku`. Use the resource definition article linked above to check possible values.
 - Preview deployment with `az deployment group what-if --template-file main.bicep`.
 - If the changes look ok, run the deployment, using the same command as in Task 1.1.
-- Change the names of all the subnets in some consistent way and re-deploy.
+- If there were files in that storage account when you change the replication from LRS to GRS, would those files be affected?
 
-## Task 1.3: Delete a resource
+## Task 1.3: Add comments and delete a resource
 
-- Apply comments to a resource. You can use // for one line at a time or comment out a whole block with /* */
-- Note: If you're familiar with Java, C#, it's easy to remember the comments work the same way.
-- Deploy again. What happens?
+- Apply comments to a resource. You can use `//` for one line at a time or comment out a whole block with `/* */`. Try adding, for example `// To be changed!` at the end of the `location` line. Deploy or run what-if. What happens? Change the comment so that it works.
+- Note: If you're familiar with programming languages like Java or C#, it's easy to remember the comments work the same way.
+- Change the location of the storage account to `westeurope`. Deploy again or run what-if. What happens?
+- Comment out the resource definition. In other words, put `/* */` around the whole code block that defines the storage account.
 - Read this article. What is needed to actually delete a resource?
 - After figuring out how to delete the resources, remove the comments and re-deploy the resource.
 - Change the location into something else than westeurope and re-reploy using the same mode as above. Does it work?
 - Change location back to westeurope.
 
-## Task 1.4: Dependent resources -- add a VM to the vnet
+## Task 1.4: Dependent resources
 
 This task involves creating a resource that is dependent on another.
-- Create a VM using this template (add link)
-- Check that parameters are in place.
-- Deploy to check the VM is created in the right subnet.
+- Create an app service plan and app using the templates in https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/3-define-resources.
+- Change the symbolic names of the two new resources to `xxx` and `yyy`, respectively. Deploy or run what-if. What happens? If any errors occur, fix references so that the code works again.
+- Change the names of the resources to `xxx` and `yyy`, respectively, and change the locations of both resources to `westeurope`.
 - Add descriptions where applicable. (From here on, do this every time you add new params, resources, etc.)
 
 ## Task 1.4: Rollback a deployment
