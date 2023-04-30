@@ -105,7 +105,8 @@ This task involves creating a resource that is dependent on another.
 - Add a file share to the storage account using the same mechanism as the app service plan and app above. You can use the following code:
 ```resource fileShare 'Microsoft.Storage/storageAccounts/fileServices/shares@2021-04-01' = {
   name: '${sa.name}/default/fileshare'
-}```
+}
+```
 
 ## Task 1.5: Use a child resource
 
