@@ -101,6 +101,10 @@ This task involves creating a resource that is dependent on another.
 - Change the names of the resources to `xxx` and `yyy`, respectively, and change the locations of both resources to `westeurope`. After these changes, deploy. What happens?
 - Add a blob container to the storage account using the same mechanism as the app service plan and app above. See THIS.
 
+## Task 1.5: Use a child resource
+
+- Convert the blob container from a dependent resource to a child resource. See THIS.
+
 ## Task 1.4: Rollback a deployment
 
 https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/rollback-on-error
