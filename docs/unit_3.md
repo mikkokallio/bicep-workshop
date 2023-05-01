@@ -46,14 +46,16 @@ Let's modularize the SQL server and while doing so, also add integration with a 
 - You know the drill! Modularize the App Service plan and the app within it. Remember to do the same kind of things you did for the storage account and SQL server.
 
 ## Task 3.5: Use a loop to clone resources
-- TBA
-
+- Read about arrays and looping in https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/loops#array-elements.
+- Use a similar array loop as in the example, but instead of applying it to a storage accounts, use it to create two or more file shares inside the existing storage account. Make it so that the `sa` module accepts an array as a parameter and deploys one file share for each item in the array.
+- Define the parameter's default value in `main.bicep`. Make sure that one of the strings in the array is `files`. (We'll use that in the next exercise.)
 
 ## Task 3.6: Mount the file share
 
 Let's mount the file share in the storage account to the App Service app. The following template is a rather convoluted way to achieve this, but in some cases, some trickery is required to make Bicep do what you want.
 
 - In Azure Portal, go to the storage account and insert a text file at the root of file share within that account.
+- Read about Bicep outputs in https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/outputs?tabs=azure-powershell.
 - In `sa.bicep`, add an output for the whole storage account (i.e. not just its id or some other property.)
 - In the `app` module, add the following resource to the app:
 ```
