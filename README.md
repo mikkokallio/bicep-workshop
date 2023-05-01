@@ -29,11 +29,12 @@ ADD PICTURE HERE
 - View file contents with `cat main.bicep`.
 - See https://learn.microsoft.com/en-us/azure/cloud-shell/features#pre-installed-tools for a list of tools that the Cloud Shell has pre-installed.
 
-## Task 0.3: Create resource group
+## Task 0.3: Create resource group (rg)
 
-If working in a shared subscription, it's important that each participant has a resource group with a unique name. Replace the example with something based on your name, e.g. `rg-workshop-mkallio`.
+When working in a shared subscription, it's important that each participant has a resource group with a unique name. Replace the example with something based on your name, e.g. `rg-workshop-mkallio`.
 
-`az group create --location westeurope --name rg-workshop-alastname`
+- Run `az group create --location westeurope --name rg-workshop-alastname` to create a resource group.
+- Check in portal that the rg got deployed to the right subscription.
 
 Note: Normally, it's a good practice to group together resources in resource groups according to their lifecycles: "Resources that live together and die together." However, to keep things simple, we're using a single resource group for all resources. (Later workshops may include using a larger scope.)
 
@@ -51,8 +52,8 @@ Some resource providers are registered by default. Other resource providers are 
 |Feature|Syntax|Notes|
 |---|---|---|
 |Resources|`resource sa 'Microsoft.Storage/storageAccounts@2022-09-01' = { ... }`||
-|Child resources|   |   |
-|Dependent resources| |
+|Dependent resources|`serverFarmId: appServicePlan.id`|Requires using a reference to another resource.|
+|Child resources|   |Can be defined within the parent or outside it as a separate resource.|
 |Preview with what-if|`az deployment group what-if --template-file main.bicep`| |
 |Single line comments|`// This is a comment`| |
 |Multiline comments|`/* This comment can span multiple lines */`||
@@ -89,13 +90,13 @@ Some resource providers are registered by default. Other resource providers are 
 - Apply comments to a resource. You can use `//` for one line at a time or comment out a whole block with `/* */`. Try adding, for example `// To be changed!` at the end of the `location` line. Deploy or run what-if. What happens? Change the comment so that it works.
 - Note: If you're familiar with programming languages like Java or C#, it's easy to remember the comments work the same way.
 - Change the location of the storage account to `westeurope`. Deploy again or run what-if. What happens?
-- Comment out the resource definition. In other words, put `/* */` around the whole code block that defines the storage account.
+- Comment out the resource definition. In other words, put `/* */` around the whole code block that defines the storage account. If you now deploy the template, does the resource get deleted?
 - Read this article https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes. What is needed to actually delete a resource that is not in the template (or is commented out)?
-- After successfully deleting the resources, remove the comments and re-deploy the resource.
-- Change the location into something else than westeurope and re-reploy using the same mode as above. Does it work?
-- Change location back to westeurope.
+- After successfully deleting the resources, remove the comments and re-deploy the template with all resources.
+- Change the location into something else than `westeurope` and re-reploy using the same mode as above. Does it work?
+- Change the location back to `westeurope`.
 
-## Task 1.4: Dependent resources
+## Task 1.4: Add dependent resources
 
 This task involves creating a resource that is dependent on another.
 
@@ -112,7 +113,7 @@ resource fileShare 'Microsoft.Storage/storageAccounts/fileServices/shares@2021-0
 }
 ```
 
-## Task 1.5: Use am internal child resource
+## Task 1.5: Use a child resource within a resource
 
 It's possible to define child resources also within the parent resource, which means it's not necessary to use a reference to establish the parent-child relationship.
 
