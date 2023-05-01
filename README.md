@@ -55,7 +55,7 @@ Some resource providers are registered by default. Other resource providers are 
 |Dependent resources| |
 |Preview with what-if|`az deployment group what-if --template-file main.bicep`| |
 |Single line comments|`// This is a comment`| |
-|Multiline comments||`/* This comment can span multiple lines */`|
+|Multiline comments|`/* This comment can span multiple lines */`||
 |Existing resources|`resource stg 'Microsoft.Storage/storageAccounts@2019-06-01' existing = { ... }`| |
 
 ## Task 1.1: Create storage account resource
