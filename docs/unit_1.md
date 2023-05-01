@@ -77,7 +77,7 @@ It's possible to define child resources also within the parent resource, which m
 Sometimes, it's necessary to refer to existing resources outside the scope of your deployment. You might, for example, use a secret from an key vault that is in its own resource group.
 
 - See https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/existing-resource for syntax examples.
-- Add a key vault to the template using the `existing` syntax. The key vault's name is `kv-shared` and it's in the `rg-keyvault` resource group. In other words, you need to use the right value for `scope` to target the correct key vault.
+- Add a key vault to the template using the `existing` syntax. The key vault's name is `kv-workshop-0205` and it's in the `rg-keyvault` resource group. In other words, you need to use the right value for `scope` to target the correct key vault.
 - Hint: The sample code in the above article uses a resource group as a scope, but the resource group is refered to with a variable. Since we haven't introduced variables yet, use a string literal instead, i.e. you need to put the rg's name in single quotes `'like-this'`.
 - Note that this task doesn't create or change any resources. Consider this task complete if you can deploy the template with the existing resource without errors.
 - You can comment out the key vault definition with `/* */` so it won't generate warnings during deployments. We'll use it again later!
