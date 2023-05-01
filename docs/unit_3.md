@@ -51,29 +51,31 @@ Let's modularize the SQL server and while doing so, also add integration with a 
 
 ## Task 3.6: Mount the file share
 
-Let's mount the file share in the storage account to the App Service app.
+Let's mount the file share in the storage account to the App Service app. The following template is a rather convoluted way to achieve this, but in some cases, some trickery is required to make Bicep do what you want.
 
 - In Azure Portal, go to the storage account and insert a text file at the root of file share within that account.
-- In `sa.bicep`, add an output for the storage account's name.
-- Also add an output for the file share's name. The notation might look like this: `VNet1::VNet1_Subnet1.properties.addressPrefix`
-- In the `app` module, add the following property to the app:
+- In `sa.bicep`, add an output for the whole storage account (i.e. not just its id or some other property.)
+- In the `app` module, add the following resource to the app:
 ```
-    azureStorageAccounts: {
-      mount: {
-        type: 'AzureFiles'
-        accountName: 'REPLACE ME'
-        shareName: 'files'
-        mountPath: '/mounts/folder'
-      }
+resource mount 'Microsoft.Web/sites/config@2021-01-15' = {
+  name: '${appServiceApp.name}/azurestorageaccounts'
+  properties: {
+    'files': {
+      type: 'AzureFiles'
+      shareName: 'files'
+      mountPath: '/mounts/folder'
+      accountName: storageName      
+      accessKey: listKeys(storageAccount.resourceId, storageAccount.apiVersion).keys[0].value
     }
+  }
+}
 ```
-- As the template suggests, the value of `accountName` needs to be replaced. The easy way is to just use the parameter bring the value from `main.bicep` using a parameter Think of a way to 
-- Replace the value of the `shareName` property with a parameter value as well.
+- Add to the module definition of `app` as well as the module itself a parameter `storageAccount`. It should get its value from the storage account's outputs.
+- Also add a parameter for `storageName` if it didn't exist.
 - In Azure Portal, open the app and check in **Configuration > Path mappings** that the mount is visible.
 - Then navigate to **Development Tools > Console** in the left menu.
-- In the shell, go to `C:\mounts\folder\` and check if .
-
-output childAddressPrefix string = VNet1::VNet1_Subnet1.properties.addressPrefix
-
+- In the shell, go to `C:\mounts\folder\` and check if you can see the file you added.
+- Having both the storage account's name and the account itself as parameters seems like a complicated way to do things? Is there a better way?
+- The property `shareName` is hard-coded. Try to also parametrize that.
 
 [<<< Previous](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_2.md) [Next >>>](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_4.md)
