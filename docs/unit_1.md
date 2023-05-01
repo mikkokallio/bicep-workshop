@@ -81,3 +81,5 @@ Sometimes, it's necessary to refer to existing resources outside the scope of yo
 - Hint: The sample code in the above article uses a resource group as a scope, but the resource group is refered to with a variable. Since we haven't introduced variables yet, use a string literal instead, i.e. you need to put the rg's name in single quotes `'like-this'`.
 - Note that this task doesn't create or change any resources. Consider this task complete if you can deploy the template with the existing resource without errors.
 - You can comment out the key vault definition with `/* */` so it won't generate warnings during deployments. We'll use it again later!
+
+[<<< Previous](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_0.md) [Next >>>](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_2.md)
