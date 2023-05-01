@@ -100,18 +100,8 @@ resource sqlDatabase 'Microsoft.Sql/servers/databases@2022-05-01-preview' = {
   }
 }
 ```
-- Run `az keyvault show --name "kv-shared345" --resource-group "rg-keevoolt" --query id` to get a reference to the existing key vault. Copy the output.
-- In your parameter file, add the following, replacing the key vault id with the output of the previous command.
-```
-"sqlAdmin": {
-      "reference": {
-        "keyVault": {
-          "id": "YOUR-KEY-VAULT-RESOURCE-ID"
-        },
-        "secretName": "sqlAdmin"
-      }
-    },
-```
-- Add a similar entry for `sqlPassword`, replacing also the value of `secretName`.
+- Uncomment the key vault that was added earlier in Task 1.6.
+- In the SQL server definition, replace the values of `administratorLogin` and `administratorLoginPassword` with `kv.getSecret('sqlAdmin')` and `kv.getSecret('sqlPassword')`, respectively.
+- The two parameters added in this task are currently not needed, but you might need them later. So comment them out for now.
 
 [<<< Previous](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_1.md) [Next >>>](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_3.md)
