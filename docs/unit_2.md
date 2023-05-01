@@ -100,8 +100,6 @@ resource sqlDatabase 'Microsoft.Sql/servers/databases@2022-05-01-preview' = {
   }
 }
 ```
-- Uncomment the key vault that was added earlier in Task 1.6.
-- In the SQL server definition, replace the values of `administratorLogin` and `administratorLoginPassword` with `kv.getSecret('sqlAdmin')` and `kv.getSecret('sqlPassword')`, respectively.
-- The two parameters added in this task are currently not needed, but you might need them later. So comment them out for now.
+- Test deployment. Note: The deployment may now take several minutes because of the SQL server.
 
 [<<< Previous](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_1.md) [Next >>>](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_3.md)
