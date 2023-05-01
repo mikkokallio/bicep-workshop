@@ -43,7 +43,7 @@ Let's modularize the SQL server and while doing so, also add integration with a 
 
 ## Task 3.3: Modularize the App Service
 
-- TBA
+- You know the drill! Modularize the App Service plan and the app within it. Remember to do the same kind of things you did for the storage account and SQL server.
 
 ## Task 3.4: Mount the file share
 
