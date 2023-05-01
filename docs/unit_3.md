@@ -45,10 +45,27 @@ Let's modularize the SQL server and while doing so, also add integration with a 
 
 - You know the drill! Modularize the App Service plan and the app within it. Remember to do the same kind of things you did for the storage account and SQL server.
 
+## Task 3.4: Use a loop to clone resources
+- TBA
+
+
 ## Task 3.4: Mount the file share
+
+Let's mount the file share in the storage account to the App Service app.
 
 - TBA. Outputs.
 - In `sa.bicep`, add an output for share's id.
+- In the `app` module, add the following property to the app:
+```
+    azureStorageAccounts: {
+      mount: {
+        type: 'AzureFiles'
+        accountName: 'saproductxtls4vkdckjmt2'
+        shareName: 'files'
+        mountPath: '/mounts/folder'
+      }
+    }
+```
 
 output childAddressPrefix string = VNet1::VNet1_Subnet1.properties.addressPrefix
 
