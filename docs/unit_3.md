@@ -38,3 +38,5 @@ output childAddressPrefix string = VNet1::VNet1_Subnet1.properties.addressPrefix
 ## Task 3.4: Working with key vault
 
 - As a reminder: https://learn.microsoft.com/en-us/training/modules/build-reusable-bicep-templates-parameters/5-how-secure-parameter
+
+[<<< Previous](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_2.md) [Next >>>](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_4.md)
