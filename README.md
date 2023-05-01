@@ -8,12 +8,12 @@ ADD PICTURE HERE
 
 ## Contents
 
-[Unit 0: Preparations](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_0.md)
-[Unit 1: Create, modify, and destroy resources](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_1.md)
-[Unit 2: Refactor code to improve maintainability](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_2.md)
-[Unit 3](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_3.md)
-[Unit 4](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_4.md)
-[Unit 5](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_5.md)
+- [Unit 0: Preparations](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_0.md)
+- [Unit 1: Create, modify, and destroy resources](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_1.md)
+- [Unit 2: Refactor code to improve maintainability](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_2.md)
+- [Unit 3](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_3.md)
+- [Unit 4](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_4.md)
+- [Unit 5](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_5.md)
 
 
 # Unit 4: Using modules from a private registry
