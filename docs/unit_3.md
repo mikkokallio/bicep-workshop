@@ -27,7 +27,7 @@
 - Run what-if to see what gets changed, if anything, then deploy.
 - Check deployments in your resource group. What do you notice?
 
-## Task 3.2: Modularize the SQL server
+## Task 3.3: Modularize the SQL server
 
 Let's modularize the SQL server and while doing so, also add integration with a Key Vault. This article might also be useful: https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/key-vault-parameter?tabs=azure-cli. The key vault should exist in a separate rg, and it should have template deployment enabled with `az keyvault update  --name ExampleVault --enabled-for-template-deployment true`.
 
@@ -41,31 +41,37 @@ Let's modularize the SQL server and while doing so, also add integration with a 
 - The two parameters added in this task are currently not needed, but you might need them later. So comment them out for now.
 - As a reminder: https://learn.microsoft.com/en-us/training/modules/build-reusable-bicep-templates-parameters/5-how-secure-parameter
 
-## Task 3.3: Modularize the App Service
+## Task 3.4: Modularize the App Service
 
 - You know the drill! Modularize the App Service plan and the app within it. Remember to do the same kind of things you did for the storage account and SQL server.
 
-## Task 3.4: Use a loop to clone resources
+## Task 3.5: Use a loop to clone resources
 - TBA
 
 
-## Task 3.4: Mount the file share
+## Task 3.6: Mount the file share
 
 Let's mount the file share in the storage account to the App Service app.
 
-- TBA. Outputs.
-- In `sa.bicep`, add an output for share's id.
+- In Azure Portal, go to the storage account and insert a text file at the root of file share within that account.
+- In `sa.bicep`, add an output for the storage account's name.
+- Also add an output for the file share's name. The notation might look like this: `VNet1::VNet1_Subnet1.properties.addressPrefix`
 - In the `app` module, add the following property to the app:
 ```
     azureStorageAccounts: {
       mount: {
         type: 'AzureFiles'
-        accountName: 'saproductxtls4vkdckjmt2'
+        accountName: 'REPLACE ME'
         shareName: 'files'
         mountPath: '/mounts/folder'
       }
     }
 ```
+- As the template suggests, the value of `accountName` needs to be replaced. The easy way is to just use the parameter bring the value from `main.bicep` using a parameter Think of a way to 
+- Replace the value of the `shareName` property with a parameter value as well.
+- In Azure Portal, open the app and check in **Configuration > Path mappings** that the mount is visible.
+- Then navigate to **Development Tools > Console** in the left menu.
+- In the shell, go to `C:\mounts\folder\` and check if .
 
 output childAddressPrefix string = VNet1::VNet1_Subnet1.properties.addressPrefix
 
