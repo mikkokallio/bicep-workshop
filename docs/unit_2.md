@@ -61,7 +61,7 @@ Some resource types (such as storage accounts) require names that are globally u
 - Also add a `@maxLength` decorator for the `productName` parameter. Limit the length to 13 characters.
 - See also https://learn.microsoft.com/en-us/training/modules/build-reusable-bicep-templates-parameters/3-exercise-add-parameters-with-decorators?pivots=cli for information on usage.
 
-## Task 2.6: Using a parameter file
+## Task 2.6: Use a parameter file
 
 Parameter files were mentioned earlier. Let's try using one!
 
@@ -70,5 +70,15 @@ Parameter files were mentioned earlier. Let's try using one!
 - The file now has parameters `appServicePlanInstanceCount`, `appServicePlanSku`, and `cosmosDBAccountLocations`. However, currently you only need `productName`, so you can remove the last two parameters from the file and modify the first one so that the parameter's name and value correspond to what is needed.
 - Deploy using the parameter file, so the command changes like this: `az deployment group create --template-file main.bicep --parameters main.parameters.json`.
 - If you add any new parameters in later exercises that would be useful to insert automatically, update the parameter file.
+
+## Task 2.7: Add a database and secure its secrets
+
+Let's add a SQL db, along with secure parameters and integration with a Key Vault. This article https://learn.microsoft.com/en-us/training/modules/build-reusable-bicep-templates-parameters/6-exercise-create-use-parameter-files?pivots=cli explains some relevant concepts and gives examples.
+
+- Add two new parameters: `sqlAdmin` and `sqlPassword`. Both are strings.
+- Add a description for each parameter.
+- Also add the `@secure()` decorator. These two parameters are secrets and therefore need this decorator.
+- Try deploying the template. How does the new decorator affect things?
+
 
 [<<< Previous](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_1.md) [Next >>>](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_3.md)
