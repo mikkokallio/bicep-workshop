@@ -77,7 +77,7 @@ Let's add a SQL db, along with secure parameters and integration with a Key Vaul
 
 - Add two new parameters: `sqlAdmin` and `sqlPassword`. Both are strings.
 - Add a description for each parameter.
-- Also add the `@secure()` decorator. These two parameters are secrets and therefore need this decorator.
+- Also add the `@secure()` decorator. These two parameters are secrets and therefore need this decorator. Note that you can stack multiple decorators on top of each other, adding a new line for each one.
 - Try deploying the template. How does the new decorator affect things?
 - Now add the SQL server and database. You can use the following template:
 ```
