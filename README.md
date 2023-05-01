@@ -53,9 +53,9 @@ Some resource providers are registered by default. Other resource providers are 
 |Resources|`resource sa 'Microsoft.Storage/storageAccounts@2022-09-01' = { ... }`||
 |Child resources|   |   |
 |Dependent resources| |
-|Preview with what-if|``| |
+|Preview with what-if|`az deployment group what-if --template-file main.bicep`| |
 |Single line comments|`// This is a comment`| |
-|Multiline comments||   |
+|Multiline comments||`/* This comment can span multiple lines */`|
 |Existing resources|`resource stg 'Microsoft.Storage/storageAccounts@2019-06-01' existing = { ... }`| |
 
 ## Task 1.1: Create storage account resource
@@ -98,7 +98,9 @@ Some resource providers are registered by default. Other resource providers are 
 ## Task 1.4: Dependent resources
 
 This task involves creating a resource that is dependent on another.
+
 - Add to `main.bicep` an app service plan and app using the templates in https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/3-define-resources.
+- Observe the syntax. How does one of the resources reference the other?
 - Change the `name` of each new resource to `appla-xyz344n` and `app-xyz123213`, respectively.
 - Change the symbolic names of the two new resources to `xxx` and `yyy`, respectively. Deploy or run what-if. What happens? If any errors occur, fix references so that the code works again and you're able to deploy it.
 - Change the locations of both resources to `westeurope` and deploy. What happens?
@@ -110,15 +112,21 @@ resource fileShare 'Microsoft.Storage/storageAccounts/fileServices/shares@2021-0
 }
 ```
 
-## Task 1.5: Use a child resource
+## Task 1.5: Use am internal child resource
+
+It's possible to define child resources also within the parent resource, which means it's not necessary to use a reference to establish the parent-child relationship.
 
 - Change the file share from a dependent resource defined outside the storage account to a child resource defined within the parent resource. See https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/child-resource-name-type#within-parent-resource.
 - If you use a different name for the file share when you change it from an externally defined resource to an internal one, the older one is not automatically deleted, so you must use the complete mode or otherwise delete it.
 
 ## Task 1.6: Work with existing resources
 
+Sometimes, it's necessary to refer to existing resources outside the scope of your deployment. You might, for example, use a secret from an key vault that is in its own resource group.
+
 - See https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/existing-resource for syntax examples.
 - Add a key vault to the template using the `existing` syntax. The key vault's name is `kv-shared` and it's in the `rg-keyvault` resource group. In other words, you need to use the right value for `scope` to target the correct key vault.
+- Hint: The sample code in the above article uses a resource group as a scope, but the resource group is refered to with a variable. Since we haven't introduced variables yet, use a string literal instead, i.e. you need to put the rg's name in single quotes `'like-this'`.
+- Note that this task doesn't create or change any resources. Consider this task complete if you can deploy the template with the existing resource without errors.
 
 # Unit 2: Refactor code to improve maintainability
 
