@@ -140,8 +140,8 @@ Sometimes, it's necessary to refer to existing resources outside the scope of yo
 |Feature|Syntax|Notes|
 |---|---|---|
 |Variables|`var appServicePlanName = 'plan-productx'`||
-|Parameters|`param appServiceAppName string`|   |
-|Combined strings| | |
+|Parameters|`param appServiceAppName string`||
+|Combined strings|`'plan-${productName}'` | |
 |Unique strings|`uniqueString(resourceGroup().id)`||
 |Descriptions|`@description('The name of the storage account to deploy.')`<br>`param storageAccountName string`
 |Decorators|```@allowed([</br>'nonprod'</br>'prod'<br/>])<br>param environmentType string```|   |
