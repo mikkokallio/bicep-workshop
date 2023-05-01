@@ -154,7 +154,7 @@ Sometimes, it's necessary to refer to existing resources outside the scope of yo
 - Using the same principles as above, create a string parameter `location` with the value `westeurope`. Run what-if, and observe how `location` is treated differently from `productName` because it has a default value.
 - Everywhere in the code, replace the string literal `'westeurope'` with the parameter name. Run what-if. There should be no changes.
 - Finally, change the line to `param location string = resourceGroup().location`.
-- In addition to manually inserting parameter values, giving parameter values as arguments, and using default values, it's also possible to use a parameter file. Read more about it here: https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameter-files
+The above tasks showed how it's possible to provide parameter values in several different ways: by manually inserting parameter values, giving parameter values as arguments, and using default values. Additionally, it's possible to use a parameter file. Read more about it here: https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameter-files
 
 ## Task 2.2: Add descriptions to make the code easier to read
 - Read about decorators in https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameters#decorators and read especially https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameters#description to understand how description decorators are used.
