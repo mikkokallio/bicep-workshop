@@ -73,7 +73,7 @@ Parameter files were mentioned earlier. Let's try using one!
 
 ## Task 2.7: Add a database and secure its secrets
 
-Let's add a SQL db, along with secure parameters and integration with a Key Vault. This article https://learn.microsoft.com/en-us/training/modules/build-reusable-bicep-templates-parameters/6-exercise-create-use-parameter-files?pivots=cli explains some relevant concepts and gives examples. This article might also be useful: https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/key-vault-parameter?tabs=azure-cli. A key vault should exist in a separate rg, and it should have template deployment enabled with `az keyvault update  --name ExampleVault --enabled-for-template-deployment true`.
+Let's add a SQL db, along with secure parameters. This article https://learn.microsoft.com/en-us/training/modules/build-reusable-bicep-templates-parameters/6-exercise-create-use-parameter-files?pivots=cli explains some relevant concepts and gives examples. 
 
 - Add two new parameters: `sqlAdmin` and `sqlPassword`. Both are strings.
 - Add a description for each parameter.
