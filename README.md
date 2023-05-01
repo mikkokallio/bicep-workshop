@@ -4,9 +4,9 @@ This is a 1-day workshop to illustrate the fundamental concepts and syntax of Bi
 
 ## Target architecture
 
-ADD PICTURE HERE
+![Target architecture](https://github.com/mikkokallio/bicep-workshop/blob/main/images/architecture.png)
 
-
+The above picture shows most of the resources used in the hands-on exercises. Additionally, a storage account is deployed.
 
 ## Contents
 
