@@ -243,8 +243,9 @@ output childAddressPrefix string = VNet1::VNet1_Subnet1.properties.addressPrefix
 - Consider how you must again change the reference to the subnet.
 - Deploy to test changes.
 
+## Task 3.4: Working with key vault
 
-- Create a new module for private link/endpoint?
+- As a reminder: https://learn.microsoft.com/en-us/training/modules/build-reusable-bicep-templates-parameters/5-how-secure-parameter
 
 # Unit 4: Using modules from a private registry
 
