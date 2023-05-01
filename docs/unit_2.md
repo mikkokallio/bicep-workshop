@@ -73,12 +73,12 @@ Parameter files were mentioned earlier. Let's try using one!
 
 ## Task 2.7: Add a database and secure its secrets
 
-Let's add a SQL db, along with secure parameters and integration with a Key Vault. This article https://learn.microsoft.com/en-us/training/modules/build-reusable-bicep-templates-parameters/6-exercise-create-use-parameter-files?pivots=cli explains some relevant concepts and gives examples.
+Let's add a SQL db, along with secure parameters and integration with a Key Vault. This article https://learn.microsoft.com/en-us/training/modules/build-reusable-bicep-templates-parameters/6-exercise-create-use-parameter-files?pivots=cli explains some relevant concepts and gives examples. A key vault should exist in a separate rg, and it should have template deployment enabled with `az keyvault update  --name ExampleVault --enabled-for-template-deployment true`.
 
 - Add two new parameters: `sqlAdmin` and `sqlPassword`. Both are strings.
 - Add a description for each parameter.
 - Also add the `@secure()` decorator. These two parameters are secrets and therefore need this decorator. Note that you can stack multiple decorators on top of each other, adding a new line for each one.
-- Try deploying the template. How does the new decorator affect things?
+- Run a what-if. How does the new decorator affect things?
 - Now add the SQL server and database. You can use the following template:
 ```
 resource sqlServer 'Microsoft.Sql/servers@2022-05-01-preview' = {
@@ -100,6 +100,18 @@ resource sqlDatabase 'Microsoft.Sql/servers/databases@2022-05-01-preview' = {
   }
 }
 ```
-
+- Run `az keyvault show --name "kv-shared345" --resource-group "rg-keevoolt" --query id` to get a reference to the existing key vault. Copy the output.
+- In your parameter file, add the following, replacing the key vault id with the output of the previous command.
+```
+"sqlAdmin": {
+      "reference": {
+        "keyVault": {
+          "id": "YOUR-KEY-VAULT-RESOURCE-ID"
+        },
+        "secretName": "sqlAdmin"
+      }
+    },
+```
+- Add a similar entry for `sqlPassword`, replacing also the value of `secretName`.
 
 [<<< Previous](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_1.md) [Next >>>](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_3.md)
