@@ -56,6 +56,7 @@ Some resource providers are registered by default. Other resource providers are 
 |Preview with what-if|``| |
 |Single line comments|`// This is a comment`| |
 |Multiline comments||   |
+|Existing resources|`resource stg 'Microsoft.Storage/storageAccounts@2019-06-01' existing = { ... }`| |
 
 ## Task 1.1: Create storage account resource
 
@@ -114,15 +115,12 @@ resource fileShare 'Microsoft.Storage/storageAccounts/fileServices/shares@2021-0
 - Change the file share from a dependent resource defined outside the storage account to a child resource defined within the parent resource. See https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/child-resource-name-type#within-parent-resource.
 - If you use a different name for the file share when you change it from an externally defined resource to an internal one, the older one is not automatically deleted, so you must use the complete mode or otherwise delete it.
 
-## Task 1.6: Rollback a deployment
+## Task 1.6: Work with existing resources
 
-https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/rollback-on-error
+- See https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/existing-resource for syntax examples.
+- Add a key vault to the template using the `existing` syntax. The key vault's name is `kv-shared` and it's in the `rg-keyvault` resource group. In other words, you need to use the right value for `scope` to target the correct key vault.
 
-## Task 1.7: Work with existing resources
-
-az deployment group list --output table
-
-# Unit 2: Refactor code to improve maintainbility
+# Unit 2: Refactor code to improve maintainability
 
 - Model solution for Unit 1: ADD LINK
 
@@ -239,6 +237,10 @@ Replace custom modules with ones from the global template library.
 
 ## Task x.x: Loops, i and [item, item2, item3]
 - TBA
+
+## Task 1.6: Rollback a deployment
+
+https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/rollback-on-error
 
 
 # To be checked
