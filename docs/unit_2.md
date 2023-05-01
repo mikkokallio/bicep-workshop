@@ -79,6 +79,27 @@ Let's add a SQL db, along with secure parameters and integration with a Key Vaul
 - Add a description for each parameter.
 - Also add the `@secure()` decorator. These two parameters are secrets and therefore need this decorator.
 - Try deploying the template. How does the new decorator affect things?
+- Now add the SQL server and database. You can use the following template:
+```
+resource sqlServer 'Microsoft.Sql/servers@2022-05-01-preview' = {
+  name: sqlServerName
+  location: location
+  properties: {
+    administratorLogin: sqlServerAdministratorLogin
+    administratorLoginPassword: sqlServerAdministratorPassword
+  }
+}
+
+resource sqlDatabase 'Microsoft.Sql/servers/databases@2022-05-01-preview' = {
+  parent: sqlServer
+  name: sqlDatabaseName
+  location: location
+  sku: {
+    name: sqlDatabaseSku.name
+    tier: sqlDatabaseSku.tier
+  }
+}
+```
 
 
 [<<< Previous](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_1.md) [Next >>>](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_3.md)
