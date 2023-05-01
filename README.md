@@ -150,20 +150,17 @@ Sometimes, it's necessary to refer to existing resources outside the scope of yo
 
 - Add the line `param productName string` at the top of `main.bicep`. Deploy the template. What happens?
 - Deploy again this time using `az deployment group create --template-file main.bicep --parameters productName='productx'`. What changes?
-- Now change the line to `param productName string = 'app-projectx'`. Deploy the template. What changes?
 - Familiarize yourself with how variables and parameters work in Bicep: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/5-add-flexibility-parameters-variables
-- Using the same principles as above, create a string parameter `location` with the value `westeurope`.
+- Using the same principles as above, create a string parameter `location` with the value `westeurope`. Run what-if, and observe how `location` is treated differently from `productName` because it has a default value.
 - Everywhere in the code, replace the string literal `'westeurope'` with the parameter name. Run what-if. There should be no changes.
-- Try changing to `param location string = 'westus3'` and deploy. Use what-if. What happens? (DELETE THIS?)
 - Finally, change the line to `param location string = resourceGroup().location`.
 - In addition to manually inserting parameter values, giving parameter values as arguments, and using default values, it's also possible to use a parameter file. Read more about it here: https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameter-files
 
 ## Task 2.2: Add descriptions to make the code easier to read
 - Read about decorators in https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameters#decorators and read especially https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameters#description to understand how description decorators are used.
 - Add a description to the `location` parameter as shown in the article. Write a description that describes what the parameter does. This makes the code more readable and can provide guidance during deployment.
-- Add a description also for the `productName` parameter.
-- Test deployment to see this.
-- You can give the `productName` parameter a default value (or alternatively keep deploying giving the parameter value as an argument), so you don't have to specify it each time you deploy.
+- Add a description also for the `productName` parameter. Run what-if and when you're asked to supply a value for the parameter, type `?`. What do you see?
+- You can now give the `productName`, so you don't have to specify it each time you deploy.
 - Add descriptions also for resources in your template.
 - When adding new parameters, resources, etc. in later parts of the workshop, add descriptions also for them.
 
@@ -176,13 +173,13 @@ In the previous task, we defined a product name parameter. Let's start using it 
 - Similarly, change the name of the app that uses that plan to include the product name.
 - Deploy. Assuming the plan name changes, the template now deploys a new plan, so delete the previous one if necessary.
 
-## Task 2.3: Change storage and app names to unique strings
+## Task 2.4: Change storage and app names to unique strings
 - param storageAccountName string = uniqueString(resourceGroup().id)
 - param storageAccountName string = 'toylaunch${uniqueString(resourceGroup().id)}'
 - Check the resulting resource running `az storage account list --output table` or view the resource in the portal.
 - `uniqueString()` is a function in Bicep. As a concept, this is similar to functions/methods in programming languages. Bicep has dozens of built-in functions that can be used to make the code more flexible and re-usable. Browse https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-functions for a few minutes.
 
-## Task 2.4: Add prod/nonprod parameter with @allowed decorator
+## Task 2.5: Add prod/nonprod parameter with @allowed decorator
 
 - Add a parameter for environment type after the previous parameters. Use the @allowed decorator as shown in the table.
 - Add a variable ^var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'^
