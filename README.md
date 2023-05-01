@@ -139,7 +139,7 @@ Sometimes, it's necessary to refer to existing resources outside the scope of yo
 
 |Feature|Syntax|Notes|
 |---|---|---|
-|Variables|``||
+|Variables|`var appServicePlanName = 'plan-productx'`||
 |Parameters|`param appServiceAppName string`|   |
 |Combined strings| | |
 |Unique strings|`uniqueString(resourceGroup().id)`||
