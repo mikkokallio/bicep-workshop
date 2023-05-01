@@ -27,7 +27,7 @@ ADD PICTURE HERE
 - View file contents with `cat main.bicep`.
 - Open the file with `code main.bicep`, enter some text, save with Ctrl+S, and exit with Ctrl+Q.
 - View file contents with `cat main.bicep`.
-- Run `code .` to open the editor with the working directory shown on the left.
+- Run `code .` to open the editor with the file explorer shown on the left.
 - See https://learn.microsoft.com/en-us/azure/cloud-shell/using-cloud-shell-editor for more information about the Cloud Shell Editor.
 - See https://learn.microsoft.com/en-us/azure/cloud-shell/features#pre-installed-tools for a list of tools that the Cloud Shell has pre-installed.
 
