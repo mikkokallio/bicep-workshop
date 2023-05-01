@@ -77,7 +77,7 @@ Some resource providers are registered by default. Other resource providers are 
 
 ## Task 1.2: Modify the resource
 
-- Change the symbolic name of the resource `storageAccount` to `sa`. This is a common naming convention for storage accounts.
+- Change the symbolic name of the resource from `storageAccount` to `sa`. This is a common naming convention for storage accounts.
 - Try deploying the same template again without any other changes. What happens?
 - On your local machine create a text file `sample.txt` using Notepad or similar editor.
 - In Azure portal, navigate to the storage account and create a blob container, and upload the local file to the container.
