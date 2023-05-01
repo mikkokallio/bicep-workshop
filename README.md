@@ -1,4 +1,6 @@
-# bicep-workshop
+# Bicep workshop
+
+This is a 1-day workshop to illustrate the fundamental concepts and syntax of Bicep, and to learn how deploy resources with Bicep templates on the command-line.
 
 ## Target architecture
 
