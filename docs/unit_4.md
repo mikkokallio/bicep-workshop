@@ -2,9 +2,6 @@
 
 - Model solution for Unit 3: ADD LINK
 
-## Task 4.1: Loops, i and [item, item2, item3]
-- TBA
-
 ## Task 4.2.: Convert an ARM template to Bicep
 - Create a resource in Azure without using Bicep (e.g. through the portal).
 - View the resource's ARM (json) template.
