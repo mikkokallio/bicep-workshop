@@ -19,7 +19,3 @@ The above picture shows most of the resources used in the hands-on exercises. Ad
 # After the workshop
 
 When you're done, you can delete the resource group that you used for deploying resources. That removes not only the rg but also any resources.
-
-# To be checked
-- What's this: The configuration value of bicep.use_binary_from_path has been set to 'false'.
-- Anatomy of template/module, slide vs article. Symbolic names vs Azure names, etc.
