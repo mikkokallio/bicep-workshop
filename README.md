@@ -16,3 +16,11 @@ The above picture shows most of the resources used in the hands-on exercises. Ad
 - [Unit 3: Modular re-use](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_3.md)
 - [Unit 4](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_4.md)
 - [Unit 5](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_5.md)
+
+# After the workshop
+
+When you're done, you can delete the resource group that you used for deploying resources. That removes not only the rg but also any resources.
+
+# To be checked
+- What's this: The configuration value of bicep.use_binary_from_path has been set to 'false'.
+- Anatomy of template/module, slide vs article. Symbolic names vs Azure names, etc.
