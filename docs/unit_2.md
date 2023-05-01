@@ -82,21 +82,21 @@ Let's add a SQL db, along with secure parameters and integration with a Key Vaul
 - Now add the SQL server and database. You can use the following template:
 ```
 resource sqlServer 'Microsoft.Sql/servers@2022-05-01-preview' = {
-  name: sqlServerName
+  name: 'sql-${productName}'
   location: location
   properties: {
-    administratorLogin: sqlServerAdministratorLogin
-    administratorLoginPassword: sqlServerAdministratorPassword
+    administratorLogin: sqlAdmin
+    administratorLoginPassword: sqlPassword
   }
 }
 
 resource sqlDatabase 'Microsoft.Sql/servers/databases@2022-05-01-preview' = {
   parent: sqlServer
-  name: sqlDatabaseName
+  name: 'db-${productName}'
   location: location
   sku: {
-    name: sqlDatabaseSku.name
-    tier: sqlDatabaseSku.tier
+    name: 'standard'
+    tier: 'standard'
   }
 }
 ```
