@@ -14,8 +14,7 @@ The above picture shows most of the resources used in the hands-on exercises. Ad
 - [Unit 1: Create, modify, and destroy resources](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_1.md)
 - [Unit 2: Refactor code to improve maintainability](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_2.md)
 - [Unit 3: Modular re-use](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_3.md)
-- [Unit 4](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_4.md)
-- [Unit 5](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_5.md)
+- [Unit 4: Extra exercises](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_4.md)
 
 # After the workshop
 
