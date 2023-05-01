@@ -1,7 +1,5 @@
 # Unit 4: Extra exercises
 
-- Model solution for Unit 3: ADD LINK
-
 ## Task 4.1.: Convert an ARM template to Bicep
 - Create a resource in Azure without using Bicep (e.g. through the portal).
 - View the resource's ARM (json) template.
