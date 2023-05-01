@@ -1,7 +1,5 @@
 # Unit 3: Modular re-use
 
-- Model solution for Unit 2: ADD LINK
-
 |Feature|Syntax|Notes|
 |---|---|---|
 |Module references|`module sa 'modules/sa.bicep' = { ... }`||
