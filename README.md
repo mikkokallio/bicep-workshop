@@ -185,13 +185,26 @@ Some resource types (such as storage accounts) require names that are globally u
 **Note:** `uniqueString()` is a function in Bicep. As a concept, this is similar to functions/methods in programming languages. Bicep has dozens of built-in functions that can be used to make the code more flexible and re-usable.
 - Browse https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-functions for a few minutes.
 
-## Task 2.5: Add prod/nonprod parameter with @allowed decorator
+## Task 2.5: Using variables, conditions and more decorators
 
-- Add a parameter for environment type after the previous parameters. Use the @allowed decorator as shown in the table.
-- Add a variable ^var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'^
-- Now add a second variable (e.g. one that changes VM name?) using the ternary operator and embedding that with the combined string syntax.
-- Deploy the template as usual.
-- Deploy again adding `--parameters environmentType=nonprod` to the command.
+- In https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/5-add-flexibility-parameters-variables, scroll down to **Selecting SKUs for resources**. Read how the `@allowed` decorator works.
+- Add to `main.bicep` the environment type parameter as in the example, except include three allowed values: `dev`, `test`, and `prod`.
+- Add also the variables `storageAccountSkuName` and `appServicePlanSkuName` as in the example, except make it so that the `Standard_LRS` and `F1` SKUs are used in a dev environment, otherwise use GRS and P2V3. You may find it useful to use the inequality operator `!=`.
+- Change the `name` value under `sku` in both the storage account and app service plan to use the new variables.
+- Using combined strings, add the environment type to the resource names of the App Service plan and the app, so that the resulting name could be, for example `plan-prod-projectx` when deploying with `prod` selected.
+- Test deploying the template with different values. Running in the complete mode ensures that other versions of the resources are removed.
+- Also add a `@maxLength` decorator for the `productName` parameter. Limit the length to 13 characters.
+- See also https://learn.microsoft.com/en-us/training/modules/build-reusable-bicep-templates-parameters/3-exercise-add-parameters-with-decorators?pivots=cli for information on usage.
+
+## Task 2.6: Using a parameter file
+
+Parameter files were mentioned earlier. Let's try using one!
+
+- See https://learn.microsoft.com/en-us/training/modules/build-reusable-bicep-templates-parameters/4-how-use-parameter-file-with-bicep?pivots=cli for an example of a parameter file.
+- In the Cloud Shell, create a new file `main.parameters.json` and copy-paste the example into it.
+- The file now has parameters `appServicePlanInstanceCount`, `appServicePlanSku`, and `cosmosDBAccountLocations`. However, currently you only need `productName`, so you can remove the last two parameters from the file and modify the first one so that the parameter's name and value correspond to what is needed.
+- Deploy using the parameter file, so the command changes like this: `az deployment group create --template-file main.bicep --parameters main.parameters.json`.
+- If you add any new parameters in later exercises that would be useful to insert automatically, update the parameter file.
 
 # Unit 3: Modular re-use
 
