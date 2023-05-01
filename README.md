@@ -139,38 +139,39 @@ Sometimes, it's necessary to refer to existing resources outside the scope of yo
 |Feature|Syntax|Notes|
 |---|---|---|
 |Variables|``||
-|Parameters|   |   |
-|Combined strings| |
+|Parameters|`param appServiceAppName string`|   |
+|Combined strings| | |
+|Unique strings|`uniqueString(resourceGroup().id)`||
 |Descriptions|`@description('The name of the storage account to deploy.')`<br>`param storageAccountName string`
 |Decorators|```@allowed([</br>'nonprod'</br>'prod'<br/>])<br>param environmentType string```|   |
 
 ## Task 2.1: Parametrize location
 
+- Add the line `param appServiceAppName string` at the top of `main.bicep`. Deploy the template. What happens?
+- Now change the line to `param appServiceAppName string = 'app-product'`. Add some random numbers at the end to make the string unique. Deploy the template. What changes?
 - Familiarize yourself with how variables and parameters work in Bicep: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/5-add-flexibility-parameters-variables
-- Create a string parameter location with the value `westeurope`.
-- Everywhere in the code, replace the string "westeurope" with the parameter name.
-- Try changing to param location string = 'westus3' and deploy. Use what if. What happens?
-- param location string = resourceGroup().location
+- Using the same principles as above, create a string parameter `location` with the value `westeurope`.
+- Everywhere in the code, replace the string literal `'westeurope'` with the parameter name.
+- Try changing to `param location string = 'westus3'` and deploy. Use what-if. What happens? (DELETE THIS?)
+- Finally, change the line to `param location string = resourceGroup().location`.
 
 ## Task 2.2: Add descriptions to make the code easier to read
 - Add descriptions to your params using the `@description` decorator. This makes the code more readable but also provides guidance during deployment.
 - Test deployment to see this.
 - Command to view these from CLI?
 - Add descriptions also to resources. See LINK for more information.
-- (From here on, do this every time you add new params, resources, etc.)
+- When adding new parameters, resources, etc. in later parts of the workshop, add descriptions also to them.
 
-## Task 2.3: Add resource name prefix to all names
-- Add another string param prefix and give it a value, such as "workshop".
-- Use the combined string syntax ${} to automatically insert that value into resource names. For example, a VM's name should after this change be `vm-workshop-01`.
+## Task 2.3: Use combined strings
 
-## Task 2.4: Add storage with a unique string in its name
-- Add to `main.bicep` a storage account. You can use the template e.g. in this article: https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file#resources
+- TBA
+
+## Task 2.3: Change storage and app names to unique strings
 - param storageAccountName string = uniqueString(resourceGroup().id)
 - param storageAccountName string = 'toylaunch${uniqueString(resourceGroup().id)}'
-- Make sure your storage account's name uses a unique string. After deployment, check out the resulting resource.
-- If you didn't deploy a file share already as a sub-resource, do that now.
+- Check the resulting resource running `az storage account list --output table` or view the resource in the portal.
 
-## Task 2.5: Add prod/nonprod parameter with @allowed decorator
+## Task 2.4: Add prod/nonprod parameter with @allowed decorator
 
 - Add a parameter for environment type after the previous parameters. Use the @allowed decorator as shown in the table.
 - Add a variable ^var storageAccountSkuName = (environmentType == 'prod') ? 'Standard_GRS' : 'Standard_LRS'^
@@ -254,6 +255,9 @@ Replace custom modules with ones from the global template library.
 
 https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/rollback-on-error
 
+## Task 2.3: Add resource name prefix to all names
+- Add another string param prefix and give it a value, such as "workshop".
+- Use the combined string syntax ${} to automatically insert that value into resource names. For example, a VM's name should after this change be `vm-workshop-01`.
 
 # To be checked
 - What's this: The configuration value of bicep.use_binary_from_path has been set to 'false'.
