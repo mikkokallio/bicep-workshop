@@ -4,14 +4,8 @@
 
 |Feature|Syntax|Notes|
 |---|---|---|
-|Module outputs|`output appServiceAppName string = appServiceAppName`|Put this at the end of a module.|
-|Module references|   |   |
-|Child resources|resource::subresource|   |
-
-- Read: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/7-group-related-resources-modules
-- https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/outputs?tabs=azure-powershell
-- https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/child-resource-name-type
-- https://learn.microsoft.com/en-us/training/modules/create-composable-bicep-files-using-modules/2-create-use-bicep-modules?tabs=visualizer
+|Module references|`module sa 'modules/sa.bicep' = { ... }`||
+|Module outputs|`output appServiceAppName string = appServiceApp.name`|Put this at the end of a module.|
 
 ## Task 3.1: Restructuring the project
 - Create sub-folder `modules` under the folder where you have `main.bicep`.
