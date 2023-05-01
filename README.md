@@ -81,7 +81,7 @@ Some resource providers are registered by default. Other resource providers are 
 - Try deploying the same template again without any other changes. What happens?
 - On your local machine create a text file `sample.txt` using Notepad or similar editor.
 - In Azure portal, navigate to the storage account and create a blob container, and upload the local file to the container.
-- Change the replication of the storage account from LRS to GRS. Hint: You need to change a value under `sku`. Use the resource definition article linked above to check possible values.
+- Change the replication of the storage account from LRS to GRS. Hint: You need to change a value under `sku`. It's easy to guess how to change the value, but you can use the resource definition article linked above to check possible values.
 - Preview deployment with `az deployment group what-if --template-file main.bicep`.
 - If the changes look ok, run the deployment, using the same command as in Task 1.1.
 - If there were files in that storage account when you change the replication from LRS to GRS, would those files be affected?
