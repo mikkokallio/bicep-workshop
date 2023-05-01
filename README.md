@@ -61,7 +61,7 @@ Some resource providers are registered by default. Other resource providers are 
 
 ## Task 1.1: Create storage account resource
 
-- Check out [https://learn.microsoft.com/en-us/azure/templates/microsoft.network/virtualnetworks?pivots=deployment-language-bicep](https://learn.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts?pivots=deployment-language-bicep). There exists for each resource type a similar definition.
+- Check out https://learn.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts?pivots=deployment-language-bicep. There exists for each resource type a similar definition.
 - Go to https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/3-define-resources and copy the first resource template you see on the page (a storage account).
 - Go back to the Cloud Shell and paste the template into `main.bicep`.
 - Change the name of the storage account into something unique, for example `workshopstorage[yourname]`, where you replace `[yourname]` with your initials or full name, for example. We'll learn later how to make a resource name unique automatically.
@@ -69,6 +69,7 @@ Some resource providers are registered by default. Other resource providers are 
 - Note: You can ignore the warning. We'll learn how to use variables later!
 - Note: Transpiling the file manually is not required when deploying Bicep. We do it here just to show what happens under the hood every time you deploy.
 - View the new file with `cat main.json`.
+- As mentioned, we don't need the json file, so delete it with `rm main.json`.
 - Deploy the resource with `az deployment group create --template-file main.bicep`.
 - Note: If you didn't set the default rg earlier, you need to include the `--resource-group` switch with the rg name. The same applies to all later deployment commands.
 - Check the deployed resources in portal, with `az storage account list --output table` or otherwise.
