@@ -174,10 +174,16 @@ In the previous task, we defined a product name parameter. Let's start using it 
 - Deploy. Assuming the plan name changes, the template now deploys a new plan, so delete the previous one if necessary.
 
 ## Task 2.4: Change storage and app names to unique strings
-- param storageAccountName string = uniqueString(resourceGroup().id)
-- param storageAccountName string = 'toylaunch${uniqueString(resourceGroup().id)}'
-- Check the resulting resource running `az storage account list --output table` or view the resource in the portal.
-- `uniqueString()` is a function in Bicep. As a concept, this is similar to functions/methods in programming languages. Bicep has dozens of built-in functions that can be used to make the code more flexible and re-usable. Browse https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-functions for a few minutes.
+
+Some resource types (such as storage accounts) require names that are globally unique, which means that you can't deploy a resource if its name is identical to any resource of the same type, regardless of who deployed it and in what subscription. Using unique strings helps with this limitation.
+- Add this: `param storageAccountName string = 'saproductx${uniqueString(resourceGroup().id)}'`.
+- Observe the syntax used in that line. It contains both a combined string (see previous task) and a `uniqueString()` function. The function also takes an argument, the rg's id.
+- Change the storage account to use the parameter. Deploy.
+- Check the resulting resource running `az storage account list --output table` or view the resource in the portal. As before, since your storage account name changed, you now have two accounts unless you ran the command in the complete mode.
+- Also make the app service app's name unique in a similar fashion.
+
+**Note:** `uniqueString()` is a function in Bicep. As a concept, this is similar to functions/methods in programming languages. Bicep has dozens of built-in functions that can be used to make the code more flexible and re-usable.
+- Browse https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/bicep-functions for a few minutes.
 
 ## Task 2.5: Add prod/nonprod parameter with @allowed decorator
 
