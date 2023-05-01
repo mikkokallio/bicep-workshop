@@ -18,13 +18,12 @@
 - In the new folder, create the following three new files `sa.bicep`, `app.bicep`, and `sql.bicep`.
 
 ## Task 3.2: Create a module for the storage account
+- Before you start, familiarize yourself with the concept of modules in Bicep: https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/7-group-related-resources-modules
 - Move the storage resource from `main.bicep` to the `sa.bicep`.
-- Add parameters for any values that are not defined locally. (Hint: You'll probably need two params.)
-- Go back to `main.bicep` and add a reference to that module. Remember to supply values for any parameters the module uses!
-- Run what-if to see what gets changed, then deploy.
-- Add an output for share's id.
-
-output childAddressPrefix string = VNet1::VNet1_Subnet1.properties.addressPrefix
+- Add parameters for any values that are not defined locally. (Hint: You'll probably need two or three params.)
+- Go back to `main.bicep` and add a reference to that module using the syntax given in the above article. Remember to supply values for any parameters the module uses!
+- When you add modules to `main.bicep`, you can use as symbolic names the same names you are using in the files without file endings, in other words, storage is `sa`, SQL server is `sql` and App Service is `app`.
+- Run what-if to see what gets changed, if anything, then deploy.
 
 ## Task 3.2: Modularize the SQL server
 
@@ -43,5 +42,9 @@ Let's modularize the SQL server and while doing so, also add integration with a 
 ## Task 3.4: Mount the file share
 
 - TBA. Outputs.
+- In `sa.bicep`, add an output for share's id.
+
+output childAddressPrefix string = VNet1::VNet1_Subnet1.properties.addressPrefix
+
 
 [<<< Previous](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_2.md) [Next >>>](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_4.md)
