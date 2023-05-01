@@ -42,3 +42,5 @@ Some resource providers are registered by default. Other resource providers are 
 
 - In Azure portal, go to `sub-bicep-training-sandbox`.
 - For more information, see https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types
+
+[<<< Previous](https://github.com/mikkokallio/bicep-workshop/blob/main/README.md) [Next >>>](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_1.md)
