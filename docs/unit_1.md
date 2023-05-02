@@ -17,10 +17,10 @@
 - Go back to the Cloud Shell and paste the template into `main.bicep`.
 - Change the name of the storage account into something unique, for example `workshopstorage[yourname]`, where you replace `[yourname]` with your initials or full name, for example. We'll learn later how to make a resource name unique automatically.
 - Transpile the bicep into ARM using `bicep build main.bicep`.
-- Note: You can ignore the warning. We'll learn how to use variables later!
+- The build process works as a linter, revealing any use of syntax that goes against best practices.
+- You can ignore the warning for now. We'll learn how to use variables later!
 - Note: Transpiling the file manually is not required when deploying Bicep. We do it here just to show what happens under the hood every time you deploy.
 - View the new file with `cat main.json`.
-- As mentioned, we don't need the json file, so delete it with `rm main.json`.
 - Deploy the resource with `az deployment group create --template-file main.bicep`.
 - Note: If you didn't set the default rg earlier, you need to include the `--resource-group` switch with the rg name. The same applies to all later deployment commands.
 - Check the deployed resources in portal, with `az storage account list --output table` or otherwise.
