@@ -9,7 +9,6 @@
 - Run `az account show --output table`.
 - In the output, check which subscription has the `IsDefault` value set as `true`. Before deploying anything it's good to make sure you are using the right environment!
 - Change the sandbox to your default with `az account set --subscription "sub-bicep-training-sandbox"`.
-- (Optional) Clone this repo in your cloud shell using `git clone` and the string from the **Code** dropdown.
 
 ## Task 0.2: Test basic Linux commands
 
@@ -34,7 +33,7 @@ When working in a shared subscription, it's important that each participant has 
 
 Note: Normally, it's a good practice to group together resources in resource groups according to their lifecycles: "Resources that live together and die together." However, to keep things simple, we're using a single resource group for all resources. (Later workshops may include using a larger scope.)
 
-Optional: Set the rg as default. `az config set defaults.group=rg-workshop-alastname`.
+- Set the rg as default. `az config set defaults.group=rg-workshop-alastname`.
 
 ## Task 0.4: Check resource providers
 
