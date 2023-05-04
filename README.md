@@ -16,6 +16,10 @@ The above picture shows most of the resources used in the hands-on exercises. Ad
 - [Unit 3: Modular re-use](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_3.md)
 - [Unit 4: Extra exercises](https://github.com/mikkokallio/bicep-workshop/blob/main/docs/unit_4.md)
 
-# After the workshop
+## Model solution
+
+See [this folder](https://github.com/mikkokallio/bicep-workshop/blob/main/code/) for a model solution that was created during the workshop in the hands-on session. Some tasks were skipped, so it doesn't have all features.
+
+## After the workshop
 
 When you're done, you can delete the resource group that you used for deploying resources. That removes not only the rg but also any resources.
