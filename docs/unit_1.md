@@ -54,7 +54,7 @@ This task involves creating a resource that is dependent on another.
 
 - Add to `main.bicep` an app service plan and app using the templates in https://learn.microsoft.com/en-us/training/modules/build-first-bicep-template/3-define-resources.
 - Observe the syntax. How does one of the resources reference the other?
-- Change the names of the resources to `plan-[productname]` and `app-[productname]`, respectively, and change the locations of both resources to `westeurope`. Make sure the `[productname] is something unique. `After these changes, deploy.
+- Change the names of the resources to `plan-[productname]` and `app-[productname]`, respectively, and change the locations of both resources to `westeurope`. Make sure the `[productname]` is something unique. `After these changes, deploy.
 - Add a file share to the storage account using the same mechanism as the app service plan and app above. You can use the following code:
 ```
 resource fileShare 'Microsoft.Storage/storageAccounts/fileServices/shares@2021-04-01' = {
