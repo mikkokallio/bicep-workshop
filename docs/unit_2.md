@@ -7,7 +7,7 @@
 |Combined strings|`'plan-${productName}'` | |
 |Unique strings|`uniqueString(resourceGroup().id)`||
 |Descriptions|`@description('The name of the storage account to deploy.')`<br>`param storageAccountName string`
-|Decorators|`@allowed(['nonprod' 'prod'])<br>param environmentType string`|   |
+|Decorators|`@allowed(['nonprod' 'prod'])`<br>`param environmentType string`|   |
 
 ## Task 2.1: Parametrize location
 
