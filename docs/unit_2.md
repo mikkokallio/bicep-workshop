@@ -24,8 +24,7 @@ The above tasks showed how it's possible to provide parameter values in several 
 - Add a description to the `location` parameter as shown in the article. Write a description that describes what the parameter does. This makes the code more readable and can provide guidance during deployment.
 - Add a description also for the `productName` parameter. Run what-if and when you're asked to supply a value for the parameter, type `?`. What do you see?
 - You can now give the `productName`, so you don't have to specify it each time you deploy.
-- Add descriptions also for resources in your template.
-- When adding new parameters, resources, etc. in later parts of the workshop, add descriptions also for them.
+- When adding new parameters, etc. in later parts of the workshop, add descriptions also for them.
 
 ## Task 2.3: Use combined strings
 
