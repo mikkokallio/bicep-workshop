@@ -12,6 +12,8 @@
 
 ## Task 0.2: Test basic Linux commands
 
+If you're not familiar with Linux commands, the following may be useful during the workshop.
+
 - Create a new folder `mkdir bicep-workshop`.
 - Go to the folder `cd bicep-workshop`. (Note: You can use tab for completion.)
 - Create an empty file with `touch main.bicep`.
