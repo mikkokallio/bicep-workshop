@@ -24,7 +24,7 @@
 Let's modularize the SQL server and while doing so, also add integration with a Key Vault. This article might also be useful: https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/key-vault-parameter?tabs=azure-cli. The key vault should exist in a separate rg, and it should have template deployment enabled with `az keyvault update  --name ExampleVault --enabled-for-template-deployment true`.
 
 - Like with the storage account above, move the SQL server and its database to `sql.bicep`.
-- Copy also the secure parameters to the module.
+- Move also the secure parameters to the module.
 - If any parameters the resources need are missing, add them too.
 - Add a module definition in `main.bicep`. Again, include all parameters that the module uses.
 - Test that syntax is correct with what-if.
