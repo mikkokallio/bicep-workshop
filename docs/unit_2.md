@@ -55,7 +55,7 @@ Some resource types (such as storage accounts) require names that are globally u
 - Change the `name` value under `sku` in both the storage account and app service plan to use the new variables.
 - Using combined strings, add the environment type to the resource names of the App Service plan and the app, so that the resulting name could be, for example `plan-prod-projectx` when deploying with `prod` selected.
 - Test deploying the template with different values. Running in the complete mode ensures that other versions of the resources are removed.
-- Also add a `@maxLength` decorator for the `productName` parameter. Limit the length to 13 characters.
+- Also add a `@maxLength` decorator for the `productName` parameter. Limit the length to 9 characters. Change also the storageaccount to use the product name so that the name starts with ´sa` followed by product name, followed by unique string.
 - See also https://learn.microsoft.com/en-us/training/modules/build-reusable-bicep-templates-parameters/3-exercise-add-parameters-with-decorators?pivots=cli for information on usage.
 
 ## Task 2.6: Add a database and secure its secrets
